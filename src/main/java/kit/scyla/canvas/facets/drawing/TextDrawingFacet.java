@@ -31,6 +31,11 @@ public class TextDrawingFacet extends DrawingCanvasFacet<Text> {
 
     @Override
     public void draw(Canvas canvas) {
+
+        // Force generate if changes with setter
+        onShapeDefined(shape());
+
+
         Text shapeText = shape();
         paint().setTextAlign(Paint.Align.CENTER);
 
