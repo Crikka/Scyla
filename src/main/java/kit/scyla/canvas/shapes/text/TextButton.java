@@ -3,6 +3,9 @@ package kit.scyla.canvas.shapes.text;
 import android.content.Context;
 import android.graphics.Point;
 
+import kit.scyla.canvas.facets.collision.InputTextCollisionFacet;
+import kit.scyla.canvas.facets.collision.TextCollisionFacet;
+import kit.scyla.canvas.facets.drawing.InputTextDrawingFacet;
 import kit.scyla.canvas.facets.drawing.TextButtonDrawingFacet;
 
 /**
@@ -16,5 +19,12 @@ public class TextButton extends Text {
         super(context, text, point);
 
         defineDrawingFacet(new TextButtonDrawingFacet());
+        defineCollisionFacet(new TextCollisionFacet());
+    }
+
+    @Override
+    public void recalculateDrawing(){
+        defineDrawingFacet(new TextButtonDrawingFacet());
+        defineCollisionFacet(new TextCollisionFacet());
     }
 }

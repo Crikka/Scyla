@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Point;
 
 import kit.scyla.canvas.facets.collision.InputTextCollisionFacet;
+import kit.scyla.canvas.facets.collision.TextCollisionFacet;
 import kit.scyla.canvas.facets.drawing.InputTextDrawingFacet;
+import kit.scyla.canvas.facets.drawing.TextDrawingFacet;
 import kit.scyla.core.facets.image.ImageFacet;
 
 /**
@@ -25,5 +27,11 @@ public class InputText extends Text {
     public ImageFacet<Text> imageFacet() {
         // TODO
         return null;
+    }
+
+    @Override
+    public void recalculateDrawing(){
+        defineDrawingFacet(new InputTextDrawingFacet());
+        defineCollisionFacet(new InputTextCollisionFacet());
     }
 }

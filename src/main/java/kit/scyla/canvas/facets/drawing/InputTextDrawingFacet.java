@@ -37,7 +37,6 @@ public class InputTextDrawingFacet extends TextDrawingFacet {
 
         int topY = bottomY - 10;
 
-
         paint().setColor(Color.WHITE);
 
         RectF r = new RectF(topX, topY, bottomX, bottomY);

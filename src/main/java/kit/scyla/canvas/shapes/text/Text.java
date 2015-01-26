@@ -37,8 +37,7 @@ public class Text extends ShapeCanvas<Text> {
         m_color = Color.BLACK;
         m_typeface = Typeface.createFromAsset(context.getAssets(), "hurry_up.ttf");
 
-        defineDrawingFacet(new TextDrawingFacet());
-        defineCollisionFacet(new TextCollisionFacet());
+        recalculateDrawing();
         subscribeInteraction(new GroundInteraction());
     }
 
@@ -52,18 +51,19 @@ public class Text extends ShapeCanvas<Text> {
         m_color = Color.BLACK;
         m_typeface = Typeface.createFromAsset(context.getAssets(), "hurry_up.ttf");
 
-        defineDrawingFacet(new TextDrawingFacet());
-        defineCollisionFacet(new TextCollisionFacet());
+        recalculateDrawing();
         subscribeInteraction(new GroundInteraction());
     }
 
 
     public void setColor(int color){
         m_color = color;
+        recalculateDrawing();
     }
 
     public void setSize(float size){
         m_size = (int) (size * SharedElements.ratio * scale * 1.5);
+        recalculateDrawing();
     }
 
     public int getSize() {
@@ -76,6 +76,7 @@ public class Text extends ShapeCanvas<Text> {
 
     public void setText(String text) {
         this.m_text = text;
+        recalculateDrawing();
     }
 
     public int getColor() {
@@ -105,15 +106,23 @@ public class Text extends ShapeCanvas<Text> {
 
     public void append(String text) {
         this.m_text += text;
+        recalculateDrawing();
     }
 
     public void append(char text) {
         this.m_text += text;
+        recalculateDrawing();
     }
 
     public void remove(int number) {
         if (m_text.length() > 0) {
             m_text = m_text.substring(0, m_text.length() - 1);
+            recalculateDrawing();
         }
+    }
+
+    public void recalculateDrawing(){
+        defineDrawingFacet(new TextDrawingFacet());
+        defineCollisionFacet(new TextCollisionFacet());
     }
 }
