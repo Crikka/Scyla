@@ -56,11 +56,11 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
 
         m_actionOnEachTick = new HashMap<>();
 
-        defineGravityCenterFacet(new GravityCenterFacet<TSelf>());
+        defineGravityCenterFacet(new GravityCenterFacet<TSelf>(gravityCenter));
     }
 
     @SuppressWarnings("unchecked")
-    public final void defineGravityCenterFacet(GravityCenterFacet<TSelf> gravityCenterFacet) {
+    private final void defineGravityCenterFacet(GravityCenterFacet<TSelf> gravityCenterFacet) {
         gravityCenterFacet.defineShape((TSelf) this);
         this.m_gravityCenterFacet = gravityCenterFacet;
     }
@@ -162,7 +162,7 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
 
     public final GravityCenterFacet<TSelf> gravityCenterFacet() {
         if (m_gravityCenterFacet == null) {
-            defineGravityCenterFacet(new GravityCenterFacet<TSelf>());
+            defineGravityCenterFacet(new GravityCenterFacet<TSelf>(null));
         }
 
         return m_gravityCenterFacet;
@@ -174,6 +174,7 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
 
     public abstract ImageFacet<TSelf> imageFacet();
 
+    @Deprecated
     public Point getGravityCenter() {
         return m_gravityCenter;
     }

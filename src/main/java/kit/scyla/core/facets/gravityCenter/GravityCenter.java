@@ -8,6 +8,7 @@ import android.graphics.Point;
  * Date : 23/01/2015
  */
 public interface GravityCenter {
+    Point getGravityCenter();
     void moveGravityCenterTo(int x, int y);
     void moveGravityCenterTo(Point point);
     void offsetGravityCenter(int x, int y);

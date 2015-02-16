@@ -11,9 +11,21 @@ import kit.scyla.core.shapes.Shape;
  * Date : 23/01/2015
  */
 public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> implements GravityCenter {
+
+    private Point m_position;
+
+    public GravityCenterFacet(Point position){
+        m_position = position;
+    }
+
+    @Override
+    public Point getGravityCenter() {
+        return m_position;
+    }
+
     @Override
     public void moveGravityCenterTo(int x, int y) {
-        shape().getGravityCenter().set(x, y);
+        m_position.set(x, y);
     }
 
     public final void moveGravityCenterTo(Point point) {
@@ -21,7 +33,7 @@ public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<T
     }
 
     public final void offsetGravityCenter(int x, int y) {
-        moveGravityCenterTo(shape().getGravityCenter().x + x, shape().getGravityCenter().y + y);
+        moveGravityCenterTo(m_position.x + x, m_position.y + y);
     }
 
     @Override
