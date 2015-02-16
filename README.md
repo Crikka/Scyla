@@ -32,7 +32,7 @@ This sample code show "Hello word" that you can drag
 
 ``` java
 
-public class myView extends ScylaCanvasView{
+public class myView extends ScylaCanvasView {
 	
 	public myView(ViewHandler handler, Context context) {
 		super(handler, context);
@@ -40,7 +40,7 @@ public class myView extends ScylaCanvasView{
 
 	@Override
 	public void addCustomElements(Scene scene, GridTemplate grid) {
-		final Text txt = new Text(context(),"Hellow world",grid.getCenter());
+		final Text txt = new Text(context(),"Hello world",grid.getCenter());
 		scene.addStaticElement(txt);
 		
 		this.subscribeTouchListener(txt,new TouchEvent() {
