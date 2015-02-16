@@ -27,17 +27,19 @@ public class TextDrawingFacet extends DrawingCanvasFacet<Text> {
         paint().setColor(text.getColor());
         paint().setTextSize(text.getSize());
         paint().setTypeface(text.getTypeface());
+
+        if(shape().isCenter()) {
+            paint().setTextAlign(Paint.Align.CENTER);
+        }
     }
 
     @Override
     public void draw(Canvas canvas) {
 
         Text shapeText = shape();
-        paint().setTextAlign(Paint.Align.CENTER);
-
         int height = shape().getTextHeight();
 
-        canvas.drawText(shapeText.getText(), shape().getGravityCenter().x, shape().getGravityCenter().y + height / 2, paint());
+        canvas.drawText(shapeText.getText(), shape().gravityCenterFacet().getGravityCenter().x, shape().gravityCenterFacet().getGravityCenter().y + height / 2, paint());
     }
 
 }

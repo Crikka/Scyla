@@ -32,13 +32,13 @@ public class TextButtonDrawingFacet extends TextDrawingFacet {
         int width = shapeText.getTextWidth();
         int height = shapeText.getTextHeight();
 
-        int topX = shape().getGravityCenter().x - width / 2 - 20;
-        int topY = shape().getGravityCenter().y - height / 4 - 20;
+        int topX = shape().gravityCenterFacet().getGravityCenter().x - width / 2 - 20;
+        int topY = shape().gravityCenterFacet().getGravityCenter().y - height / 4 - 20;
 
-        int bottomX = shape().getGravityCenter().x + width / 2 + 20;
-        int bottomY = shape().getGravityCenter().y + height / 2 + 20;
+        int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width / 2 + 20;
+        int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height / 2 + 20;
 
-        canvas.drawText(shapeText.getText(), shape().getGravityCenter().x, shape().getGravityCenter().y + height / 2, paint());
+        canvas.drawText(shapeText.getText(), shape().gravityCenterFacet().getGravityCenter().x, shape().gravityCenterFacet().getGravityCenter().y + height / 2, paint());
 
         paint().setColor(Color.WHITE);
 
@@ -47,7 +47,7 @@ public class TextButtonDrawingFacet extends TextDrawingFacet {
 
         paint().setColor(shapeText.getColor());
 
-        canvas.drawText(shapeText.getText(), shape().getGravityCenter().x, shape().getGravityCenter().y + height / 2, paint());
+        canvas.drawText(shapeText.getText(), shape().gravityCenterFacet().getGravityCenter().x, shape().gravityCenterFacet().getGravityCenter().y + height / 2, paint());
 
     }
 }

@@ -119,8 +119,8 @@ public final class ForcesSystem {
             }
         }
 
-        int currentX = m_element.getGravityCenter().x;
-        int currentY = m_element.getGravityCenter().y;
+        int currentX = m_element.gravityCenterFacet().getGravityCenter().x;
+        int currentY = m_element.gravityCenterFacet().getGravityCenter().y;
         int destinationX = currentX + (m_blockX ? 0 : vectorDestinationX);
         int destinationY = currentY + (m_blockY ? 0 : vectorDestinationY);
 

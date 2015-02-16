@@ -14,8 +14,8 @@ import kit.scyla.core.facets.collision.CollisionFacet;
 public class MovieShapeCollisionFacet<TShape extends MovieShape<TShape>> extends CollisionFacet<TShape> {
     private Region genericDetermineRegion() {
         int width = shape().getMovie().width(), height = shape().getMovie().height();
-        int xTopLeft = shape().getGravityCenter().x - width / 2;
-        int yTopLeft = shape().getGravityCenter().y - height / 2;
+        int xTopLeft = shape().gravityCenterFacet().getGravityCenter().x - width / 2;
+        int yTopLeft = shape().gravityCenterFacet().getGravityCenter().y - height / 2;
 
         return new Region(xTopLeft, yTopLeft, xTopLeft + width, yTopLeft + height);
     }

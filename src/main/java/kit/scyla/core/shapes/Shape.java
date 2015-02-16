@@ -129,9 +129,9 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         }
     }
 
+    @Deprecated
     public void follow(Shape shape) {
-        gravityCenterFacet().moveGravityCenterTo(shape.getGravityCenter());
-        collisionFacet().recalculateContactArea();
+        gravityCenterFacet().follow(shape);
     }
 
 

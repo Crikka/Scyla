@@ -20,12 +20,12 @@ public class InputTextCollisionFacet extends CollisionFacet<Text> {
         int width = shape().getTextWidth();
         int height = shape().getTextHeight();
 
-        int topX = shape().getGravityCenter().x;
-        int topY = shape().getGravityCenter().y - height / 4;
+        int topX = shape().gravityCenterFacet().getGravityCenter().x;
+        int topY = shape().gravityCenterFacet().getGravityCenter().y - height / 4;
 
 
-        int bottomX = shape().getGravityCenter().x + width;
-        int bottomY = shape().getGravityCenter().y + height / 2;
+        int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width;
+        int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height / 2;
         return new Region(topX, topY, bottomX, bottomY);
 
     }

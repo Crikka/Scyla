@@ -19,13 +19,13 @@ public class MoveBetweenInX<TShape extends Shape<TShape, ?>> extends MovingFacet
     @Override
     public void onMoveNewPosition() {
 
-        Point current = shape().getGravityCenter();
+        Point current = shape().gravityCenterFacet().getGravityCenter();
 
         if (direction) {
 
             // Go to Point A
 
-            if (shape().getGravityCenter().x > m_pointA.x) {
+            if (shape().gravityCenterFacet().getGravityCenter().x > m_pointA.x) {
                 direction = !direction;
             } else {
                 current.x += speed();
@@ -36,7 +36,7 @@ public class MoveBetweenInX<TShape extends Shape<TShape, ?>> extends MovingFacet
 
             // Go to Point B
 
-            if (shape().getGravityCenter().x < m_pointB.x) {
+            if (shape().gravityCenterFacet().getGravityCenter().x < m_pointB.x) {
                 direction = !direction;
             } else {
                 current.x -= speed();

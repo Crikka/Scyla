@@ -37,8 +37,8 @@ public class MovieShapeDrawingFacet<TShape extends MovieShape<TShape>> extends D
             relTime = (int) ((now - movieStart) % movie.duration());
             movie.setTime(relTime);
 
-            int x = shape.getGravityCenter().x - movie.width() / 2;
-            int y = shape.getGravityCenter().y - movie.height() / 2;
+            int x = shape.gravityCenterFacet().getGravityCenter().x - movie.width() / 2;
+            int y = shape.gravityCenterFacet().getGravityCenter().y - movie.height() / 2;
 
             movie.draw(canvas, x, y);
 

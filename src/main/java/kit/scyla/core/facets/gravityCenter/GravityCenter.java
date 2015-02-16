@@ -2,6 +2,8 @@ package kit.scyla.core.facets.gravityCenter;
 
 import android.graphics.Point;
 
+import kit.scyla.core.shapes.Shape;
+
 /**
  * Created with IntelliJ
  * Created by Ferrand
@@ -14,4 +16,5 @@ public interface GravityCenter {
     void offsetGravityCenter(int x, int y);
     void translateX(int x);
     void translateY(int y);
+    void follow(Shape shape);
 }

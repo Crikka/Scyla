@@ -13,8 +13,8 @@ import kit.scyla.core.facets.collision.CollisionFacet;
 public class SkinnedShapeCollisionFacet<TShape extends SkinnedShape<TShape>> extends CollisionFacet<TShape> {
     private Region genericDetermineRegion() {
         int width = shape().getSkin().getWidth(), height = shape().getSkin().getHeight();
-        int xTopLeft = shape().getGravityCenter().x - width / 2;
-        int yTopLeft = shape().getGravityCenter().y - height / 2;
+        int xTopLeft = shape().gravityCenterFacet().getGravityCenter().x - width / 2;
+        int yTopLeft = shape().gravityCenterFacet().getGravityCenter().y - height / 2;
 
         return new Region(xTopLeft, yTopLeft, xTopLeft + width, yTopLeft + height);
     }

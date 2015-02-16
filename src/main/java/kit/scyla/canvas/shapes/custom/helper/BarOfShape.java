@@ -38,9 +38,9 @@ public abstract class BarOfShape<TShape extends SkinnedShape<TShape>> extends Co
                 rotationPoint = rotation.rotationPoint();
             }
 
-            shape.defineRotationFacet(new RotateAround<TShape>(rotation.speed(), rotationPoint, true, rotation.angle()));
+            shape.defineRotationFacet(new RotateAround<TShape>(rotation.speed(), rotationPoint, rotation.angle()));
 
-            previousShape = shape.getGravityCenter();
+            previousShape = shape.gravityCenterFacet().getGravityCenter();
         }
 
     }
@@ -62,7 +62,7 @@ public abstract class BarOfShape<TShape extends SkinnedShape<TShape>> extends Co
                 shape.gravityCenterFacet().moveGravityCenterTo(x, y);
             }
 
-            previousShape = shape.getGravityCenter();
+            previousShape = shape.gravityCenterFacet().getGravityCenter();
             offset = new Point(shape.getSkin().getWidth(), shape.getSkin().getHeight());
         }
     }

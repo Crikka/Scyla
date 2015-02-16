@@ -70,9 +70,9 @@ public abstract class RotationFacet<TShape extends Shape<TShape, ?>> extends Fac
     @Override
     public void onShapeDefined(TShape shape) {
         if(m_gravityRotation == null) {
-            m_gravityRotation = shape.getGravityCenter();
+            m_gravityRotation = shape.gravityCenterFacet().getGravityCenter();
         }
-        m_radius = distance(m_gravityRotation, shape.getGravityCenter());
+        m_radius = distance(m_gravityRotation, shape.gravityCenterFacet().getGravityCenter());
     }
 
     public abstract void onMoveNewPosition();

@@ -30,10 +30,10 @@ public class InputTextDrawingFacet extends TextDrawingFacet {
         int width = shapeText.getTextWidth();
         int height = shapeText.getTextHeight();
 
-        int topX = shape().getGravityCenter().x - 10;
+        int topX = shape().gravityCenterFacet().getGravityCenter().x - 10;
 
-        int bottomX = shape().getGravityCenter().x + width + 10;
-        int bottomY = shape().getGravityCenter().y + height / 2 + 20;
+        int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width + 10;
+        int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height / 2 + 20;
 
         int topY = bottomY - 10;
 
@@ -44,7 +44,7 @@ public class InputTextDrawingFacet extends TextDrawingFacet {
 
         paint().setColor(shapeText.getColor());
 
-        canvas.drawText(shapeText.getText(), shape().getGravityCenter().x, shape().getGravityCenter().y + height / 2, paint());
+        canvas.drawText(shapeText.getText(), shape().gravityCenterFacet().getGravityCenter().x, shape().gravityCenterFacet().getGravityCenter().y + height / 2, paint());
     }
 }
 

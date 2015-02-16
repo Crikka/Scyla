@@ -1,5 +1,6 @@
 package kit.scyla.canvas.facets.collision;
 
+import android.graphics.Paint;
 import android.graphics.Region;
 
 import kit.scyla.core.facets.collision.CollisionFacet;
@@ -16,13 +17,28 @@ public class TextCollisionFacet extends CollisionFacet<Text> {
         int width = shape().getTextWidth();
         int height = shape().getTextHeight();
 
-        int topX = shape().getGravityCenter().x - width / 2;
-        int topY = shape().getGravityCenter().y - height / 4;
+        if(shape().isCenter()) {
+
+            int topX = shape().gravityCenterFacet().getGravityCenter().x - width / 2;
+            int topY = shape().gravityCenterFacet().getGravityCenter().y - height / 4;
 
 
-        int bottomX = shape().getGravityCenter().x + width / 2;
-        int bottomY = shape().getGravityCenter().y + height / 2;
-        return new Region(topX, topY, bottomX, bottomY);
+            int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width / 2;
+            int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height / 2;
+
+
+            return new Region(topX, topY, bottomX, bottomY);
+
+        }else{
+
+            int topX = shape().gravityCenterFacet().getGravityCenter().x;
+            int topY = shape().gravityCenterFacet().getGravityCenter().y - height;
+
+            int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width;
+            int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height;
+
+            return new Region(topX, topY, bottomX, bottomY);
+        }
 
     }
 
