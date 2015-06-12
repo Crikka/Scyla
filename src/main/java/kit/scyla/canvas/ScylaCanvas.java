@@ -15,7 +15,7 @@ import kit.scyla.canvas.views.ViewHandler;
 public abstract class ScylaCanvas extends Scyla<ScylaCanvasSurface, ScylaCanvasView> {
     @Override
     public ScylaCanvasSurface setup() {
-        return new ScylaCanvasSurface(this) {
+        return new ScylaCanvasSurface(getApplicationContext()) {
             @Override
             public ScylaCanvasView defaultView(ViewHandler handler, Context context) {
                 return firstView(handler, context);
