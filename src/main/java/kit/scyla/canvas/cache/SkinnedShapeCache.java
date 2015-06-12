@@ -14,10 +14,11 @@ public class SkinnedShapeCache extends CacheEngine<SkinnedShape, Bitmap> {
 
     private static SkinnedShapeCache INSTANCE = new SkinnedShapeCache();
 
-    private SkinnedShapeCache(){}
+    private SkinnedShapeCache() {
+    }
 
-    public static SkinnedShapeCache getInstance()
-    {	return INSTANCE;
+    public static SkinnedShapeCache getInstance() {
+        return INSTANCE;
     }
 
 }

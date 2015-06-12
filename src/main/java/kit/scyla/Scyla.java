@@ -9,10 +9,10 @@ import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.SurfaceView;
 
-import kit.scyla.core.ScylaFragment;
-import kit.scyla.core.ScylaView;
 import kit.scyla.canvas.views.ViewHandler;
+import kit.scyla.core.ScylaFragment;
 import kit.scyla.core.ScylaSurface;
+import kit.scyla.core.ScylaView;
 
 /**
  * Created with IntelliJ
@@ -24,8 +24,11 @@ public abstract class Scyla<TSurface extends SurfaceView & ScylaSurface<TView>, 
     private ScylaFragment<TSurface> m_Scyla_fragment;
 
     public abstract int layoutID();
+
     public abstract int renderID();
+
     public abstract TView firstView(ViewHandler handler, Context context);
+
     public abstract TSurface setup();
 
     @Override

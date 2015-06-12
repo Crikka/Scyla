@@ -14,7 +14,10 @@ import kit.scyla.canvas.views.ViewHandler;
  */
 public interface ScylaSurface<TView extends ScylaView> {
     TView defaultView(ViewHandler handler, Context context);
+
     Scene scene();
+
     boolean onKeyDown(int keyCode, @NonNull KeyEvent event);
+
     void onBackPressed();
 }

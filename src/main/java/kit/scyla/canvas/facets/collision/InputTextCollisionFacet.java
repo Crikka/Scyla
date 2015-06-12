@@ -2,8 +2,8 @@ package kit.scyla.canvas.facets.collision;
 
 import android.graphics.Region;
 
-import kit.scyla.core.facets.collision.CollisionFacet;
 import kit.scyla.canvas.shapes.text.Text;
+import kit.scyla.core.facets.collision.CollisionFacet;
 
 /**
  * Created with IntelliJ

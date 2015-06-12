@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 import kit.scyla.canvas.shapes.custom.helper.CombinationShapes;
 import kit.scyla.canvas.shapes.custom.skinned.SkinnedShape;
 import kit.scyla.core.ScylaView;
-import kit.scyla.core.cache.CacheEngine;
 import kit.scyla.core.facets.force.Gravity;
 import kit.scyla.core.shapes.Shape;
 import rx.Scheduler;

@@ -3,9 +3,9 @@ package kit.scyla.core.facets.force;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import kit.scyla.core.shapes.Shape;
 import rx.functions.Action1;
 import rx.subjects.PublishSubject;
-import kit.scyla.core.shapes.Shape;
 
 /**
  * Created with IntelliJ

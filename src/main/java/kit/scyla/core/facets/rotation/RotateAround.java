@@ -1,6 +1,7 @@
 package kit.scyla.core.facets.rotation;
 
 import android.graphics.Point;
+
 import kit.scyla.core.shapes.Shape;
 
 
@@ -37,7 +38,7 @@ public class RotateAround<TShape extends Shape<TShape, ?>> extends RotationFacet
 
         Point pointToGo = new Point(xToGo, yToGo);
 
-        m_rotation += (m_clockwise ? m_speedRotation: -m_speedRotation) / 70;
+        m_rotation += (m_clockwise ? m_speedRotation : -m_speedRotation) / 70;
 
         shape().gravityCenterFacet().moveGravityCenterTo(pointToGo);
     }

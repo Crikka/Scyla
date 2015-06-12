@@ -26,14 +26,14 @@ public abstract class DrawingCanvasFacet<TShape extends ShapeCanvas<TShape>> ext
         this.m_paint.setFilterBitmap(true);
     }
 
-    @Override
-    public void onShapeDefined(TShape shape) {}
-
-
     public DrawingCanvasFacet(Paint paint) {
         super();
 
         this.m_paint = paint;
+    }
+
+    @Override
+    public void onShapeDefined(TShape shape) {
     }
 
     protected Paint paint() {

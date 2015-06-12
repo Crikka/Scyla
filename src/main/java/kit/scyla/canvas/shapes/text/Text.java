@@ -8,9 +8,9 @@ import android.graphics.Typeface;
 
 import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.facets.collision.TextCollisionFacet;
+import kit.scyla.canvas.facets.drawing.TextDrawingFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;
 import kit.scyla.core.facets.behavior.GroundInteraction;
-import kit.scyla.canvas.facets.drawing.TextDrawingFacet;
 import kit.scyla.core.facets.image.ImageFacet;
 
 /**
@@ -20,18 +20,17 @@ import kit.scyla.core.facets.image.ImageFacet;
  */
 public class Text extends ShapeCanvas<Text> {
 
+    private static float scale;
     private int m_size;
     private String m_text;
     private int m_color;
     private Typeface m_typeface;
     private boolean m_isCenter;
 
-    private static float scale;
-
     public Text(Context context, int text, Point point) {
         super(point);
 
-        scale =  context.getResources().getDisplayMetrics().density;
+        scale = context.getResources().getDisplayMetrics().density;
         m_text = context.getResources().getText(text).toString();
 
         m_size = (int) (20 * SharedElements.ratio * scale * 1.5);
@@ -47,7 +46,7 @@ public class Text extends ShapeCanvas<Text> {
     public Text(Context context, String text, Point point) {
         super(point);
 
-        scale =  context.getResources().getDisplayMetrics().density;
+        scale = context.getResources().getDisplayMetrics().density;
         m_text = text;
 
         m_size = (int) (20 * SharedElements.ratio * scale * 1.5);
@@ -60,19 +59,13 @@ public class Text extends ShapeCanvas<Text> {
         subscribeInteraction(new GroundInteraction());
     }
 
-
-    public void setColor(int color){
-        m_color = color;
-        recalculateDrawing();
-    }
-
-    public void setSize(float size){
-        m_size = (int) (size * SharedElements.ratio * scale * 1.5);
-        recalculateDrawing();
-    }
-
     public int getSize() {
         return m_size;
+    }
+
+    public void setSize(float size) {
+        m_size = (int) (size * SharedElements.ratio * scale * 1.5);
+        recalculateDrawing();
     }
 
     public String getText() {
@@ -86,6 +79,11 @@ public class Text extends ShapeCanvas<Text> {
 
     public int getColor() {
         return m_color;
+    }
+
+    public void setColor(int color) {
+        m_color = color;
+        recalculateDrawing();
     }
 
     public Typeface getTypeface() {
@@ -126,17 +124,17 @@ public class Text extends ShapeCanvas<Text> {
         }
     }
 
-    public void recalculateDrawing(){
+    public void recalculateDrawing() {
         defineDrawingFacet(new TextDrawingFacet());
         defineCollisionFacet(new TextCollisionFacet());
     }
 
-    public void setCenter(boolean isCenter){
-        m_isCenter = isCenter;
-        recalculateDrawing();
+    public boolean isCenter() {
+        return m_isCenter;
     }
 
-    public boolean isCenter(){
-        return m_isCenter;
+    public void setCenter(boolean isCenter) {
+        m_isCenter = isCenter;
+        recalculateDrawing();
     }
 }

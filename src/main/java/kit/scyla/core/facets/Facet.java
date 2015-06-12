@@ -13,6 +13,7 @@ public abstract class Facet<TShape extends Shape> implements Serializable {
     private transient TShape m_shape;
 
     public abstract void onShapeDefined(TShape shape);
+
     public void defineShape(TShape shape) {
         this.m_shape = shape;
         onShapeDefined(shape);

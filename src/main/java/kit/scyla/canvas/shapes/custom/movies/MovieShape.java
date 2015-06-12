@@ -6,10 +6,9 @@ import android.graphics.Point;
 import java.io.InputStream;
 
 import kit.scyla.canvas.cache.MovieShapeCache;
+import kit.scyla.canvas.facets.drawing.MovieShapeDrawingFacet;
 import kit.scyla.canvas.facets.image.MovieShapeImageFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;
-import kit.scyla.core.cache.CacheEngine;
-import kit.scyla.canvas.facets.drawing.MovieShapeDrawingFacet;
 
 /**
  * Created with IntelliJ
@@ -28,7 +27,7 @@ public abstract class MovieShape<TSelf extends MovieShape<TSelf>> extends ShapeC
 
         MovieShapeCache cache = MovieShapeCache.getInstance();
 
-        Movie movie =  cache.getBitmapFromMemCache(c);
+        Movie movie = cache.getBitmapFromMemCache(c);
         if (movie != null) {
             m_movie = movie;
         } else {

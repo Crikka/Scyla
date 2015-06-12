@@ -28,7 +28,7 @@ public class TextDrawingFacet extends DrawingCanvasFacet<Text> {
         paint().setTextSize(text.getSize());
         paint().setTypeface(text.getTypeface());
 
-        if(shape().isCenter()) {
+        if (shape().isCenter()) {
             paint().setTextAlign(Paint.Align.CENTER);
         }
     }

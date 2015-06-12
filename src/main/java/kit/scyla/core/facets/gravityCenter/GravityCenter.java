@@ -11,10 +11,16 @@ import kit.scyla.core.shapes.Shape;
  */
 public interface GravityCenter {
     Point getGravityCenter();
+
     void moveGravityCenterTo(int x, int y);
+
     void moveGravityCenterTo(Point point);
+
     void offsetGravityCenter(int x, int y);
+
     void translateX(int x);
+
     void translateY(int y);
+
     void follow(Shape shape);
 }

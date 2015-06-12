@@ -63,13 +63,13 @@ public abstract class RotationFacet<TShape extends Shape<TShape, ?>> extends Fac
         this.m_clockwise = true;
     }
 
-    public void invertClockwise(){
+    public void invertClockwise() {
         m_clockwise = !m_clockwise;
     }
 
     @Override
     public void onShapeDefined(TShape shape) {
-        if(m_gravityRotation == null) {
+        if (m_gravityRotation == null) {
             m_gravityRotation = shape.gravityCenterFacet().getGravityCenter();
         }
         m_radius = distance(m_gravityRotation, shape.gravityCenterFacet().getGravityCenter());

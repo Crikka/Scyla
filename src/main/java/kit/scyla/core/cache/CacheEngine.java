@@ -1,13 +1,7 @@
 package kit.scyla.core.cache;
 
-import android.graphics.Bitmap;
-import android.graphics.Movie;
 import android.util.LruCache;
 
-import java.util.HashMap;
-
-import kit.scyla.canvas.shapes.custom.movies.MovieShape;
-import kit.scyla.canvas.shapes.custom.skinned.SkinnedShape;
 import kit.scyla.core.shapes.Shape;
 
 
@@ -20,7 +14,7 @@ public abstract class CacheEngine<TSelf extends Shape, Binary> {
 
     private LruCache<Class<? extends TSelf>, Binary> mMemoryCache;
 
-    private void init(){
+    private void init() {
 
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
 
@@ -31,14 +25,14 @@ public abstract class CacheEngine<TSelf extends Shape, Binary> {
     }
 
 
-    public void addBitmapToMemoryCache(Class<? extends TSelf> key, Binary bitmap){
+    public void addBitmapToMemoryCache(Class<? extends TSelf> key, Binary bitmap) {
         if (getBitmapFromMemCache(key) == null) {
             mMemoryCache.put(key, bitmap);
         }
     }
 
-    public Binary getBitmapFromMemCache(Class<? extends TSelf>  key) {
-        if(mMemoryCache == null){
+    public Binary getBitmapFromMemCache(Class<? extends TSelf> key) {
+        if (mMemoryCache == null) {
             init();
         }
 

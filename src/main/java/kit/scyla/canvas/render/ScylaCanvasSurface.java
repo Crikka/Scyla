@@ -17,12 +17,12 @@ import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.debug.DebugEngine;
 import kit.scyla.canvas.debug.FPS;
 import kit.scyla.canvas.debug.Level;
-import kit.scyla.core.shapes.Shape;
 import kit.scyla.canvas.views.ScylaCanvasView;
-import kit.scyla.core.ScylaSurface;
-import kit.scyla.core.ScylaView;
 import kit.scyla.canvas.views.ViewHandler;
 import kit.scyla.canvas.views.templateEngine.GridTemplate;
+import kit.scyla.core.ScylaSurface;
+import kit.scyla.core.ScylaView;
+import kit.scyla.core.shapes.Shape;
 import rx.functions.Action1;
 
 /**

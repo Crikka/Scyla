@@ -184,15 +184,15 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         m_interactions.clear();
     }
 
-    public void doIt(){
+    public void doIt() {
         Collection<Action0> actions = m_actionOnEachTick.values();
 
-        for(Action0 action :actions){
+        for (Action0 action : actions) {
             action.call();
         }
     }
 
-    public void removeRotation(){
+    public void removeRotation() {
         m_actionOnEachTick.remove("rotation");
     }
 }

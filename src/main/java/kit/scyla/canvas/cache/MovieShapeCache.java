@@ -1,10 +1,8 @@
 package kit.scyla.canvas.cache;
 
-import android.graphics.Bitmap;
 import android.graphics.Movie;
 
 import kit.scyla.canvas.shapes.custom.movies.MovieShape;
-import kit.scyla.canvas.shapes.custom.skinned.SkinnedShape;
 import kit.scyla.core.cache.CacheEngine;
 
 /**
@@ -12,14 +10,15 @@ import kit.scyla.core.cache.CacheEngine;
  * Created by lucas
  * Date 23/01/15
  */
-public class MovieShapeCache  extends CacheEngine<MovieShape, Movie> {
+public class MovieShapeCache extends CacheEngine<MovieShape, Movie> {
 
     private static MovieShapeCache INSTANCE = new MovieShapeCache();
 
-    private MovieShapeCache(){}
+    private MovieShapeCache() {
+    }
 
-    public static MovieShapeCache getInstance()
-    {	return INSTANCE;
+    public static MovieShapeCache getInstance() {
+        return INSTANCE;
     }
 
 }

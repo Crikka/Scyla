@@ -39,11 +39,11 @@ public abstract class MovingFacet<TShape extends Shape<TShape, ?>> extends Facet
 
     @Override
     public void onShapeDefined(TShape shape) {
-        if(m_pointA == null) {
+        if (m_pointA == null) {
             m_pointA = shape.gravityCenterFacet().getGravityCenter();
         }
 
-        if(m_pointB == null) {
+        if (m_pointB == null) {
             m_pointB = shape.gravityCenterFacet().getGravityCenter();
         }
     }

@@ -5,11 +5,10 @@ import android.graphics.Point;
 
 import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.cache.SkinnedShapeCache;
-import kit.scyla.canvas.shapes.ShapeCanvas;
-import kit.scyla.core.cache.CacheEngine;
 import kit.scyla.canvas.facets.collision.SkinnedShapeCollisionFacet;
 import kit.scyla.canvas.facets.drawing.SkinnedShapeDrawingFacet;
 import kit.scyla.canvas.facets.image.SkinnedShapeImageFacet;
+import kit.scyla.canvas.shapes.ShapeCanvas;
 
 /**
  * Created with IntelliJ

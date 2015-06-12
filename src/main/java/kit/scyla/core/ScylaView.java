@@ -7,12 +7,12 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 import kit.scyla.canvas.render.Scene;
-import kit.scyla.core.shapes.Shape;
 import kit.scyla.canvas.touchEvent.TouchEvent;
 import kit.scyla.canvas.touchEvent.TouchGestureEvent;
 import kit.scyla.canvas.touchEvent.TouchTypeEvent;
 import kit.scyla.canvas.views.ViewHandler;
 import kit.scyla.canvas.views.templateEngine.GridTemplate;
+import kit.scyla.core.shapes.Shape;
 
 /**
  * Created with IntelliJ
@@ -74,6 +74,7 @@ public abstract class ScylaView {
     }
 
     public abstract void addCustomElements(final Scene scene, GridTemplate grid);
+
     public void setup() {
         touchGestureEvent.clear();
     }

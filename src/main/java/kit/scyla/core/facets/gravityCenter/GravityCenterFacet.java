@@ -14,7 +14,7 @@ public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<T
 
     private Point m_position;
 
-    public GravityCenterFacet(Point position){
+    public GravityCenterFacet(Point position) {
         m_position = position;
     }
 
@@ -47,7 +47,8 @@ public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<T
     }
 
     @Override
-    public void onShapeDefined(TShape shape) {}
+    public void onShapeDefined(TShape shape) {
+    }
 
     public void follow(Shape shape) {
         moveGravityCenterTo(shape.gravityCenterFacet().getGravityCenter());
