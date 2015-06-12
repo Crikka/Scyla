@@ -32,11 +32,15 @@ public class Gravity extends Force {
     }
 
     public static void setGravity(double gravity) {
-        if (!((gravity > 0 && G > 0) || (gravity < 0 && G < 0))) {
+        if (isGravityHasChanged(gravity)) {
             getInstance().reinitialize();
         }
 
         G = gravity / 1000;
+    }
+
+    private static boolean isGravityHasChanged(double gravity){
+        return (!((gravity > 0 && G > 0) || (gravity < 0 && G < 0)));
     }
 
     public void stepGravityForward() {

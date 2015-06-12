@@ -36,21 +36,25 @@ public abstract class Scyla<TSurface extends SurfaceView & ScylaSurface<TView>, 
         super.onCreate(savedInstanceState);
         setContentView(layoutID());
 
-        this.m_Scyla_fragment = new ScylaFragment<TSurface>(setup()) {
-            @Override
-            public ScylaView startView(ViewHandler handler, Context context) {
-                return firstView(handler, context);
-            }
-        };
+        if(savedInstanceState != null){
+            m_Scyla_fragment = (ScylaFragment<TSurface>) getFragmentManager().findFragmentByTag("scyla");
+        } else {
+            this.m_Scyla_fragment = new ScylaFragment<TSurface>(setup()) {
+                @Override
+                public ScylaView startView(ViewHandler handler, Context context) {
+                    return firstView(handler, context);
+                }
+            };
 
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
 
 
-        ft.replace(renderID(), m_Scyla_fragment);
+            ft.replace(renderID(), m_Scyla_fragment, "scyla");
 
-        ft.commit();
-        fm.executePendingTransactions();
+            ft.commit();
+            fm.executePendingTransactions();
+        }
     }
 
     @Override
