@@ -24,7 +24,6 @@ public class Text extends ShapeCanvas<Text> {
     private int m_size;
     private String m_text;
     private int m_color;
-    private Typeface m_typeface;
     private boolean m_isCenter;
 
     public Text(Context context, int text, Point point) {
@@ -35,7 +34,6 @@ public class Text extends ShapeCanvas<Text> {
 
         m_size = (int) (20 * SharedElements.ratio * scale * 1.5);
         m_color = Color.BLACK;
-        m_typeface = Typeface.createFromAsset(context.getAssets(), "hurry_up.ttf");
 
         m_isCenter = true;
 
@@ -51,7 +49,6 @@ public class Text extends ShapeCanvas<Text> {
 
         m_size = (int) (20 * SharedElements.ratio * scale * 1.5);
         m_color = Color.BLACK;
-        m_typeface = Typeface.createFromAsset(context.getAssets(), "hurry_up.ttf");
 
         m_isCenter = true;
 
@@ -84,10 +81,6 @@ public class Text extends ShapeCanvas<Text> {
     public void setColor(int color) {
         m_color = color;
         recalculateDrawing();
-    }
-
-    public Typeface getTypeface() {
-        return m_typeface;
     }
 
     @Override
@@ -137,4 +130,9 @@ public class Text extends ShapeCanvas<Text> {
         m_isCenter = isCenter;
         recalculateDrawing();
     }
+
+    public Typeface getTypeface() {
+        return Typeface.DEFAULT;
+    }
+
 }

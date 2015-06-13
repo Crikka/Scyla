@@ -1,7 +1,5 @@
 package kit.scyla.core.facets.force;
 
-import kit.scyla.canvas.Share.SharedElements;
-
 /**
  * Created with IntelliJ
  * Created by Ferrand
@@ -9,8 +7,8 @@ import kit.scyla.canvas.Share.SharedElements;
  */
 public abstract class Force {
     private int m_instant;
-    private double m_stepX;
-    private double m_stepY;
+    private int m_stepX;
+    private int m_stepY;
 
     public Force() {
         super();
@@ -20,8 +18,8 @@ public abstract class Force {
 
     public final void stepForward() {
         m_instant++;
-        m_stepX = Math.round(onStepX() * SharedElements.ratio);
-        m_stepY = Math.round(onStepY() * SharedElements.ratio);
+        m_stepX = onStepX();
+        m_stepY = onStepY();
     }
 
     protected int instant() {
@@ -43,11 +41,11 @@ public abstract class Force {
     public abstract void refresh();
 
     public final int getStepX() {
-        return (int) m_stepX;
+        return m_stepX;
     }
 
     public final int getStepY() {
-        return (int) m_stepY;
+        return m_stepY;
     }
 
     public abstract int getDuration();

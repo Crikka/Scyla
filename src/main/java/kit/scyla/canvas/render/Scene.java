@@ -1,6 +1,7 @@
 package kit.scyla.canvas.render;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import kit.scyla.canvas.shapes.custom.helper.CombinationShapes;
@@ -196,6 +197,13 @@ public abstract class Scene {
             removeElementRuntime(element);
         } else {
             removeElementBasic(element);
+        }
+    }
+
+
+    public void removeElement(final List<Shape> element) {
+        for (Shape shape : element) {
+            removeElement(shape);
         }
     }
 
