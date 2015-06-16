@@ -2,18 +2,33 @@
 
 ## Canvas engine for Android
 
+Scyla is a rotation safe canvas engine for Android. Available on Gradle.
+It's run inside a fragment so you can use it wherever you want !
 
-### Add Dependency
+##### Add Dependency
 
-``` java
+<a href='http://search.maven.org/#search%7Cga%7C1%7Cscyla'><img src='http://img.shields.io/maven-central/v/fr.nelaupe/scyla.svg'></a>
+
+**Gradle dependency**
+
+``` groovy
 compile 'fr.nelaupe:scyla:1.0.1@aar'
 ```
 
-Create your own view
-This sample code show "Hello word" that you can drag
+**Maven dependency**
+
+``` xml
+<dependency>
+    <groupId>fr.nelaupe</groupId>
+    <artifactId>scyla</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
+#### Sample
+How simple is to create an "Hello word" that you can drag ?
 
 ``` java
-
 public class myView extends ScylaCanvasView {
 	
 	public myView(ViewHandler handler, Context context) {
@@ -43,11 +58,6 @@ public class myView extends ScylaCanvasView {
 }
 
 ```
-
-
-### Last Updated
-
-Release beta
 
 ## Applications that use Scyla
 
