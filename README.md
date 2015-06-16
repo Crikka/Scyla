@@ -12,7 +12,7 @@ It's run inside a fragment so you can use it wherever you want !
 **Gradle dependency**
 
 ``` groovy
-compile 'fr.nelaupe:scyla:1.0.1@aar'
+compile 'fr.nelaupe:scyla:1.0.3@aar'
 ```
 
 **Maven dependency**
@@ -21,7 +21,7 @@ compile 'fr.nelaupe:scyla:1.0.1@aar'
 <dependency>
     <groupId>fr.nelaupe</groupId>
     <artifactId>scyla</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
