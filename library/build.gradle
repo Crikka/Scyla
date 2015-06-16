@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'signing'
 
-group 'fr.nelaupe.lucas'
+group 'fr.nelaupe'
 version '1.0.1'
 
 android {
