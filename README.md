@@ -5,7 +5,7 @@
 Scyla is a rotation safe canvas engine for Android. Available on Gradle.
 It's run inside a fragment so you can use it wherever you want !
 
-##### Add Dependency
+## Add Dependency
 
 <a href='http://search.maven.org/#search%7Cga%7C1%7Cscyla'><img src='http://img.shields.io/maven-central/v/fr.nelaupe/scyla.svg'></a>
 
@@ -25,7 +25,7 @@ compile 'fr.nelaupe:scyla:1.0.1@aar'
 </dependency>
 ```
 
-#### Sample
+## Sample
 How simple is to create an "Hello word" that you can drag ?
 
 ``` java
