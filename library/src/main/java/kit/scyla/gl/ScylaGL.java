@@ -13,9 +13,11 @@ import kit.scyla.gl.views.ScylaGLView;
  * Date : 22/01/2015
  */
 public abstract class ScylaGL extends Scyla<ScylaGLSurface, ScylaGLView> {
+
     @Override
+    @Deprecated
     public ScylaGLSurface setup() {
-        return new ScylaGLSurface(this) {
+        return new ScylaGLSurface(null) {
             @Override
             public ScylaGLView defaultView(ViewHandler handler, Context context) {
                 return firstView(handler, context);

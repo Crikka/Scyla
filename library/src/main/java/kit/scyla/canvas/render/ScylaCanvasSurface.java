@@ -13,6 +13,8 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import java.io.Serializable;
+
 import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.debug.DebugEngine;
 import kit.scyla.canvas.debug.FPS;
@@ -30,7 +32,7 @@ import rx.functions.Action1;
  * Created by Ferrand
  * Date : 22/01/2015
  */
-public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceHolder.Callback, ScylaSurface<ScylaCanvasView> {
+public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceHolder.Callback, ScylaSurface<ScylaCanvasView>, Serializable {
 
     private ViewHandler m_stageHandler;
     private Scene m_scene;
@@ -95,6 +97,7 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
 
     @Override
     public void draw(@NonNull final Canvas canvas) {
+        super.draw(canvas);
 
         m_scene.onEachElement(new Action1<Shape>() {
             @Override

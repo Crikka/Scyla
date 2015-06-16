@@ -15,13 +15,31 @@ import kit.scyla.canvas.views.ViewHandler;
  * Created by Nelaupe Lucas
  * Date 04/01/15
  */
-public abstract class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
+public class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
+
+    public static final String INITIALIZE = "surface";
 
     private TSurface m_render;
 
+    @Deprecated
     public ScylaFragment(TSurface render) {
         super();
         this.m_render = render;
+    }
+
+    public ScylaFragment(){
+        super();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null){
+            m_render = (TSurface) savedInstanceState.getSerializable(INITIALIZE);
+        } else {
+            m_render = (TSurface) getArguments().getSerializable(INITIALIZE);
+        }
     }
 
     @Override
@@ -34,5 +52,8 @@ public abstract class ScylaFragment<TSurface extends SurfaceView> extends Fragme
         return m_render;
     }
 
-    public abstract ScylaView startView(ViewHandler handler, Context context);
+    @Deprecated
+    public ScylaView startView(ViewHandler handler, Context context){
+        return null;
+    }
 }
