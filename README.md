@@ -3,28 +3,10 @@
 ## Canvas engine for Android
 
 
-### Run Scyla 
+### Add Dependency
 
 ``` java
-
-public class MainActivity extends ScylaCanvas {
-
-	@Override
-	public int layoutID() {
-		return R.layout.main;
-	}
-
-	@Override
-	public int renderID() {
-		return R.id.render;
-	}
-
-	@Override
-	public ScylaCanvasView firstView(ViewHandler handler, Context context) {
-		return new myView(handler,context);
-	}
-}
-
+compile 'fr.nelaupe:scyla:1.0.1@aar'
 ```
 
 Create your own view
