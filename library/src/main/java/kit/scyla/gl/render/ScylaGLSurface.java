@@ -22,7 +22,6 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.opengl.GLSurfaceView;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -103,13 +102,13 @@ public abstract class ScylaGLSurface extends GLSurfaceView implements GLSurfaceV
 
 
     @Override
-    public boolean onTouchEvent(@NonNull MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event) {
         m_stageHandler.getCurrent().onTouchViewEvent(event);
         return true;
     }
 
     /*@Override
-    public void draw(@NonNull final Canvas canvas) {
+    public void draw(  final Canvas canvas) {
 
         m_scene.onEachElement(new Action1<SimpleShape>() {
             @Override

@@ -18,7 +18,6 @@ package kit.scyla.core;
 
 import android.content.Context;
 import android.graphics.Point;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
@@ -54,20 +53,20 @@ public abstract class ScylaView {
             }
 
             @Override
-            public void onMovingEvent(@NonNull Shape shape, Point PointFinger) {
+            public void onMovingEvent(Shape shape, Point PointFinger) {
 
                 shape.fingerEvents(PointFinger, TouchTypeEvent.Move);
             }
 
             @Override
-            public void onLongPressEvent(@NonNull Shape shape, Point PointFinger) {
+            public void onLongPressEvent(Shape shape, Point PointFinger) {
 
                 shape.fingerEvents(PointFinger, TouchTypeEvent.LongTouch);
             }
 
 
             @Override
-            public void onDoubleTapEvent(@NonNull Shape shape, Point PointFinger) {
+            public void onDoubleTapEvent(Shape shape, Point PointFinger) {
 
                 shape.fingerEvents(PointFinger, TouchTypeEvent.DoubleTap);
             }

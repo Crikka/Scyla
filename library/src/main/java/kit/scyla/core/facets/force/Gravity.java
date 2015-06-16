@@ -55,7 +55,7 @@ public class Gravity extends Force {
         G = gravity / 1000;
     }
 
-    private static boolean isGravityHasChanged(double gravity){
+    private static boolean isGravityHasChanged(double gravity) {
         return (!((gravity > 0 && G > 0) || (gravity < 0 && G < 0)));
     }
 

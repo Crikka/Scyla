@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             m_Scyla_fragment = (ScylaCanvasFragment) getFragmentManager().findFragmentByTag("scyla");
         } else {
 

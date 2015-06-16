@@ -17,7 +17,6 @@
 package kit.scyla.core;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 
 import kit.scyla.canvas.render.Scene;
@@ -33,7 +32,7 @@ public interface ScylaSurface<TView extends ScylaView> {
 
     Scene scene();
 
-    boolean onKeyDown(int keyCode, @NonNull KeyEvent event);
+    boolean onKeyDown(int keyCode, KeyEvent event);
 
     void onBackPressed();
 }

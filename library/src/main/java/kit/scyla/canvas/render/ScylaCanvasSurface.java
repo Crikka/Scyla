@@ -23,7 +23,6 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -104,13 +103,13 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
     }
 
     @Override
-    public boolean onTouchEvent(@NonNull MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event) {
         m_stageHandler.getCurrent().onTouchViewEvent(event);
         return true;
     }
 
     @Override
-    public void draw(@NonNull final Canvas canvas) {
+    public void draw(final Canvas canvas) {
         super.draw(canvas);
 
         m_scene.onEachElement(new Action1<Shape>() {

@@ -18,7 +18,6 @@ package kit.scyla.canvas;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.KeyEvent;
 
 import java.lang.reflect.Constructor;
@@ -39,7 +38,7 @@ public class ScylaCanvasFragment extends ScylaFragment<ScylaCanvasSurface> {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
 
             m_render = new ScylaCanvasSurface(getActivity().getApplicationContext()) {
                 @Override
@@ -58,7 +57,7 @@ public class ScylaCanvasFragment extends ScylaFragment<ScylaCanvasSurface> {
         }
     }
 
-    public boolean onKeyDown(int keyCode, @NonNull KeyEvent event) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             surface().onBackPressed();
         } else {

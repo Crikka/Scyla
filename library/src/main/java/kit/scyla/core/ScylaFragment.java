@@ -24,10 +24,6 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.lang.reflect.Constructor;
-
-import kit.scyla.canvas.render.ScylaCanvasSurface;
-import kit.scyla.canvas.views.ScylaCanvasView;
 import kit.scyla.canvas.views.ViewHandler;
 
 /**
@@ -47,7 +43,7 @@ public class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
         this.m_render = render;
     }
 
-    public ScylaFragment(){
+    public ScylaFragment() {
         super();
         setRetainInstance(true);
     }
@@ -63,7 +59,7 @@ public class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
     }
 
     @Deprecated
-    public ScylaView startView(ViewHandler handler, Context context){
+    public ScylaView startView(ViewHandler handler, Context context) {
         return null;
     }
 }

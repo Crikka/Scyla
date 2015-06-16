@@ -1,5 +1,6 @@
-<manifest package="kit.scyla"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="kit.scyla"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Tell the system this app requires OpenGL ES 2.0. -->
     <uses-feature
