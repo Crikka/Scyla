@@ -8,6 +8,10 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.lang.reflect.Constructor;
+
+import kit.scyla.canvas.render.ScylaCanvasSurface;
+import kit.scyla.canvas.views.ScylaCanvasView;
 import kit.scyla.canvas.views.ViewHandler;
 
 /**
@@ -19,7 +23,7 @@ public class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
 
     public static final String INITIALIZE = "surface";
 
-    private TSurface m_render;
+    protected TSurface m_render;
 
     @Deprecated
     public ScylaFragment(TSurface render) {
@@ -29,17 +33,7 @@ public class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
 
     public ScylaFragment(){
         super();
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState != null){
-            m_render = (TSurface) savedInstanceState.getSerializable(INITIALIZE);
-        } else {
-            m_render = (TSurface) getArguments().getSerializable(INITIALIZE);
-        }
+        setRetainInstance(true);
     }
 
     @Override

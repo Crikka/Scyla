@@ -24,6 +24,7 @@ public class myView extends ScylaCanvasView {
 
     @Override
     public void addCustomElements(Scene scene, GridTemplate grid) {
+
         final Text txt = new Text(context(), context().getString(R.string.hello_world), grid.getCenter());
         txt.setSize(40);
         scene.addStaticElement(txt);
