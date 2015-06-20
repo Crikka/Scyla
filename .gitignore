@@ -51,8 +51,8 @@ Temporary Items
 .apdisk
 
 # Android Studio
- *.iml
- .idea
+*.iml
+.idea
 
 # Windows
 # =========================
