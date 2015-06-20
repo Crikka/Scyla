@@ -31,6 +31,7 @@ public class MovieShapeCache extends CacheEngine<MovieShape, Movie> {
     private static MovieShapeCache INSTANCE = new MovieShapeCache();
 
     private MovieShapeCache() {
+        super();
     }
 
     public static MovieShapeCache getInstance() {

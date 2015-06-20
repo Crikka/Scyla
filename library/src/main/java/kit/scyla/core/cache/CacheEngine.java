@@ -35,11 +35,15 @@ public abstract class CacheEngine<TSelf extends Shape, Binary> {
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
 
         // Use 1/8th of the available memory for this memory cache.
-        final int cacheSize = maxMemory / 16;
+        final int cacheSize = maxMemory / 8;
 
         mMemoryCache = new LruCache<>(cacheSize);
+
     }
 
+    public CacheEngine(){
+        init();
+    }
 
     public void addBitmapToMemoryCache(Class<? extends TSelf> key, Binary bitmap) {
         if (getBitmapFromMemCache(key) == null) {
@@ -48,10 +52,6 @@ public abstract class CacheEngine<TSelf extends Shape, Binary> {
     }
 
     public Binary getBitmapFromMemCache(Class<? extends TSelf> key) {
-        if (mMemoryCache == null) {
-            init();
-        }
-
         return mMemoryCache.get(key);
     }
 
