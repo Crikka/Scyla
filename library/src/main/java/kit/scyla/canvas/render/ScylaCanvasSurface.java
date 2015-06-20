@@ -28,10 +28,9 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import kit.scyla.BuildConfig;
 import kit.scyla.canvas.Share.SharedElements;
-import kit.scyla.canvas.debug.DebugEngine;
 import kit.scyla.canvas.debug.FPS;
-import kit.scyla.canvas.debug.Level;
 import kit.scyla.canvas.views.ScylaCanvasView;
 import kit.scyla.canvas.views.ViewHandler;
 import kit.scyla.canvas.views.templateEngine.GridTemplate;
@@ -118,14 +117,14 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
 
                 shape.doIt();
 
-                if (DebugEngine.getInstance().minDebugLevel(Level.FULL)) {
+                if (BuildConfig.DEBUG) {
                     Paint p = new Paint();
                     p.setColor(Color.RED);
                     canvas.drawRect(shape.collisionFacet().getHitBox().getBounds(), p);
                 }
                 shape.drawingFacet().draw(canvas);
 
-                if (DebugEngine.getInstance().minDebugLevel(Level.FULL)) {
+                if (BuildConfig.DEBUG) {
                     Paint p = new Paint();
                     p.setColor(Color.WHITE);
                     for (int i = 0; i < GridTemplate.numberOfColumn; i++) {
@@ -145,7 +144,7 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
             }
         });
 
-        if (DebugEngine.getInstance().minDebugLevel(Level.LOW)) {
+        if (BuildConfig.DEBUG) {
             Paint p = new Paint();
             p.setColor(Color.WHITE);
             p.setTextSize(30);

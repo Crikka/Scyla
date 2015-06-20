@@ -16,28 +16,32 @@
 
 package kit.scyla.canvas.debug;
 
+import kit.scyla.BuildConfig;
+
 /**
  * Created with IntelliJ
  * Created by Nelaupe Lucas
  * Date 17/10/14
  */
+@Deprecated
 public class DebugEngine {
 
     private static DebugEngine INSTANCE = new DebugEngine();
     private Level DEBUG_Level;
 
-
+    @Deprecated
     private DebugEngine() {
         DEBUG_Level = Level.NONE;
 
     }
 
+    @Deprecated
     public static DebugEngine getInstance() {
         return INSTANCE;
     }
 
+    @Deprecated
     public void upgrade() {
-
         switch (DEBUG_Level) {
             case LOW:
                 DEBUG_Level = Level.FULL;
@@ -48,14 +52,14 @@ public class DebugEngine {
             case NONE:
                 DEBUG_Level = Level.LOW;
                 break;
-
         }
     }
 
+    @Deprecated
     public boolean minDebugLevel(Level necessarylevel) {
 
-        return DEBUG_Level != Level.NONE &&
-                (!(necessarylevel == Level.FULL) || DEBUG_Level == Level.FULL);
+        return BuildConfig.DEBUG && (DEBUG_Level != Level.NONE &&
+                (!(necessarylevel == Level.FULL) || DEBUG_Level == Level.FULL));
     }
 
 }
