@@ -50,6 +50,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Android Studio
+ *.iml
+ .idea
+
 # Windows
 # =========================
 
