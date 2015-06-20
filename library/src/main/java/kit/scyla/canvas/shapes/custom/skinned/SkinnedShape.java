@@ -17,6 +17,7 @@
 package kit.scyla.canvas.shapes.custom.skinned;
 
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.Point;
 
 import kit.scyla.canvas.Share.SharedElements;
@@ -40,8 +41,8 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
         super(position);
 
         if (autoScale) {
-            int width = (int) Math.round(skin.getWidth() * SharedElements.ratio);
-            int height = (int) Math.round(skin.getHeight() * SharedElements.ratio);
+            int newWidth = (int) Math.round(skin.getWidth() * SharedElements.ratio);
+            int newHeight = (int) Math.round(skin.getHeight() * SharedElements.ratio);
             Class<? extends SkinnedShape> classShape = ((TSelf) this).getClass();
 
             SkinnedShapeCache cache = SkinnedShapeCache.getInstance();
@@ -49,7 +50,7 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
             if (cacheScaled != null) {
                 m_skin = cacheScaled;
             } else {
-                m_skin = Bitmap.createScaledBitmap(skin, width, height, false);
+                m_skin = getResizedBitmap(skin, newHeight, newWidth);
                 cache.addBitmapToMemoryCache(classShape, m_skin);
             }
 
@@ -59,6 +60,17 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
 
         defineDrawingFacet(new SkinnedShapeDrawingFacet<TSelf>());
         defineCollisionFacet(new SkinnedShapeCollisionFacet<TSelf>());
+    }
+
+    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth)
+    {
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        return Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
     }
 
     public Bitmap getSkin() {
