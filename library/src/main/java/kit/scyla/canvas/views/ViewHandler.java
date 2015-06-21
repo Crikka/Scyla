@@ -18,8 +18,11 @@ package kit.scyla.canvas.views;
 
 import android.content.Context;
 
+import java.lang.reflect.Constructor;
+
 import kit.scyla.canvas.render.Scene;
 import kit.scyla.core.ScylaView;
+import rx.functions.Action0;
 
 /**
  * Created with IntelliJ
@@ -60,9 +63,34 @@ public abstract class ViewHandler {
         return m_context;
     }
 
+    @Deprecated
     public void setCurrentView(ScylaView view) {
         m_current = view;
         onNext();
+    }
+
+    public void setCurrentViewAtRuntime(final Class<? extends ScylaCanvasView> viewClass){
+        final ViewHandler self = this;
+
+        m_scene.subscribeRuntimeAction(new Action0() {
+            @Override
+            public void call() {
+
+                if (viewClass == null) {
+                    return;
+                }
+
+                try {
+                    Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
+                    m_current = constructor.newInstance(self, m_context);
+                    onNext();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    throw new RuntimeException(e);
+                }
+
+            }
+        });
     }
 
     public abstract ScylaView bootstrap(ViewHandler handler);
