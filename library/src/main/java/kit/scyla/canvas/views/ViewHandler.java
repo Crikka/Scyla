@@ -62,6 +62,7 @@ public abstract class ViewHandler {
 
     public void setCurrentView(ScylaView view) {
         m_current = view;
+        onNext();
     }
 
     public abstract ScylaView bootstrap(ViewHandler handler);
