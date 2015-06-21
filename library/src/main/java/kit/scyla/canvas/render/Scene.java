@@ -79,14 +79,14 @@ public abstract class Scene {
             @Override
             public void call() {
                 if (m_stage != null && !m_reload) {
-                    // Load a level into scene
                     m_reload = true;
+                    final ScylaView stage = m_stage;
+                    m_stage = null;
                     m_dynamicsElements.clear();
                     m_staticsElements.clear();
                     m_phantomsElements.clear();
-                    m_stage.setup();
-                    m_stage.addElements(self, m_width, m_height);
-                    m_stage = null;
+                    stage.setup();
+                    stage.addElements(self, m_width, m_height);
                     m_reload = false;
                 }
 
