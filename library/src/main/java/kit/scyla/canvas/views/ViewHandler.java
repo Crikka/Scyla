@@ -44,6 +44,21 @@ public abstract class ViewHandler {
         return m_current;
     }
 
+    public void setCurrent(final ScylaView view) {
+        m_scene.subscribeRuntimeAction(new Action0() {
+            @Override
+            public void call() {
+
+                if (view == null) {
+                    return;
+                }
+
+                m_current = view;
+                onNext();
+            }
+        });
+    }
+
     public final void load(ScylaView stage) {
         m_current = stage;
         onNext();
@@ -69,7 +84,7 @@ public abstract class ViewHandler {
         onNext();
     }
 
-    public void setCurrent(final Class<? extends ScylaCanvasView> viewClass){
+    public void setCurrent(final Class<? extends ScylaCanvasView> viewClass) {
 
         m_scene.subscribeRuntimeAction(new Action0() {
             @Override
@@ -88,21 +103,6 @@ public abstract class ViewHandler {
                     throw new RuntimeException(e);
                 }
 
-            }
-        });
-    }
-
-    public void setCurrent(final ScylaView view) {
-        m_scene.subscribeRuntimeAction(new Action0() {
-            @Override
-            public void call() {
-
-                if (view == null) {
-                    return;
-                }
-
-                m_current = view;
-                onNext();
             }
         });
     }

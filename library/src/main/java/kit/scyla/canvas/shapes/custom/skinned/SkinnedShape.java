@@ -62,8 +62,7 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
         defineCollisionFacet(new SkinnedShapeCollisionFacet<TSelf>());
     }
 
-    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth)
-    {
+    public Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth) {
         int width = bm.getWidth();
         int height = bm.getHeight();
         float scaleWidth = ((float) newWidth) / width;
