@@ -94,6 +94,7 @@ public abstract class ScylaView {
         touchGestureEvent.clear();
     }
 
+    @Deprecated
     public final void switchToView(ScylaView view) {
         handler().load(view);
     }

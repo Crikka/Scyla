@@ -69,8 +69,7 @@ public abstract class ViewHandler {
         onNext();
     }
 
-    public void setCurrentViewAtRuntime(final Class<? extends ScylaCanvasView> viewClass){
-        final ViewHandler self = this;
+    public void setCurrent(final Class<? extends ScylaCanvasView> viewClass){
 
         m_scene.subscribeRuntimeAction(new Action0() {
             @Override
@@ -82,13 +81,28 @@ public abstract class ViewHandler {
 
                 try {
                     Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
-                    m_current = constructor.newInstance(self, m_context);
+                    m_current = constructor.newInstance(ViewHandler.this, m_context);
                     onNext();
                 } catch (Exception e) {
                     e.printStackTrace();
                     throw new RuntimeException(e);
                 }
 
+            }
+        });
+    }
+
+    public void setCurrent(final ScylaView view) {
+        m_scene.subscribeRuntimeAction(new Action0() {
+            @Override
+            public void call() {
+
+                if (view == null) {
+                    return;
+                }
+
+                m_current = view;
+                onNext();
             }
         });
     }
