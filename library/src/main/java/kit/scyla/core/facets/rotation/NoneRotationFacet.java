@@ -23,6 +23,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date 25/12/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class NoneRotationFacet<TShape extends Shape<TShape, ?>> extends RotationFacet<TShape> {
     @Override
     public void onMoveNewPosition() {

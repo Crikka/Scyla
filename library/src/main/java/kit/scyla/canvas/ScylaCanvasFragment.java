@@ -32,6 +32,7 @@ import kit.scyla.core.ScylaFragment;
  * Created by Lucas Nelaupe
  * Date 26/03/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class ScylaCanvasFragment extends ScylaFragment<ScylaCanvasSurface> {
 
     @Override
@@ -59,11 +60,10 @@ public class ScylaCanvasFragment extends ScylaFragment<ScylaCanvasSurface> {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            surface().onBackPressed();
+            return surface().onBackPressed();
         } else {
-            surface().onKeyDown(keyCode, event);
+            return surface().onKeyDown(keyCode, event);
         }
-        return true;
     }
 
     @Override

@@ -27,6 +27,7 @@ import kit.scyla.canvas.views.ViewHandler;
  * Created by Ferrand
  * Date : 22/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public interface ScylaSurface<TView extends ScylaView> {
     TView defaultView(ViewHandler handler, Context context);
 
@@ -34,5 +35,5 @@ public interface ScylaSurface<TView extends ScylaView> {
 
     boolean onKeyDown(int keyCode, KeyEvent event);
 
-    void onBackPressed();
+    boolean onBackPressed();
 }

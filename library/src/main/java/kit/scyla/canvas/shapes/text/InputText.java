@@ -28,6 +28,7 @@ import kit.scyla.core.facets.image.ImageFacet;
  * Created by Nelaupe Lucas
  * Date 13/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class InputText extends Text {
 
     public InputText(Context context, int text, Point point) {

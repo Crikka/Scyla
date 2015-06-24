@@ -28,6 +28,7 @@ import kit.scyla.canvas.shapes.custom.skinned.SkinnedShape;
  * Created by Nelaupe Lucas
  * Date 18/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class SkinnedShapeDrawingFacet<TShape extends SkinnedShape<TShape>> extends DrawingCanvasFacet<TShape> {
     public SkinnedShapeDrawingFacet() {
         super();

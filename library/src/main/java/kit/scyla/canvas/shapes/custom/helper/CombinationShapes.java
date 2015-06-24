@@ -25,6 +25,7 @@ import kit.scyla.canvas.shapes.custom.skinned.SkinnedShape;
  * Created by Nelaupe Lucas
  * Date 04/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class CombinationShapes<TShape extends SkinnedShape<TShape>> {
 
     private ArrayList<TShape> m_elements;

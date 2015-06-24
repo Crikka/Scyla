@@ -25,6 +25,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date : 23/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public interface GravityCenter {
     Point getGravityCenter();
 

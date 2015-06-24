@@ -34,6 +34,7 @@ import kit.scyla.core.facets.image.ImageFacet;
  * Created by Nelaupe Lucas
  * Date 13/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class Text extends ShapeCanvas<Text> {
 
     private static float scale;
@@ -113,7 +114,7 @@ public class Text extends ShapeCanvas<Text> {
     }
 
     public int getTextHeight() {
-        return (int) m_size;
+        return m_size;
     }
 
     public void append(String text) {
@@ -128,7 +129,10 @@ public class Text extends ShapeCanvas<Text> {
 
     public void remove(int number) {
         if (m_text.length() > 0) {
-            m_text = m_text.substring(0, m_text.length() - 1);
+            if (m_text.length() < number) {
+                throw new IllegalArgumentException("The number is less than the text length");
+            }
+            m_text = m_text.substring(0, m_text.length() - number);
             recalculateDrawing();
         }
     }

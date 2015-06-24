@@ -25,6 +25,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date 04/10/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class Facet<TShape extends Shape> implements Serializable {
     private transient TShape m_shape;
 

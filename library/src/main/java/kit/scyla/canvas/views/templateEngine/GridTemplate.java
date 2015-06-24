@@ -23,6 +23,7 @@ import android.graphics.Point;
  * Created by Nelaupe Lucas
  * Date 06/12/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class GridTemplate {
 
     public static final int numberOfRow = 30;

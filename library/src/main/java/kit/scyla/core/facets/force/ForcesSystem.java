@@ -28,6 +28,7 @@ import rx.subjects.PublishSubject;
  * Created by Ferrand
  * Date 25/11/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public final class ForcesSystem {
     private ArrayList<Force> m_forces;
     private boolean m_subjectToGravity;

@@ -24,6 +24,7 @@ import android.util.DisplayMetrics;
  * Created by Nelaupe Lucas
  * Date 17/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class SharedElements {
 
     private static final double INCH_DEFAULT = 12;

@@ -27,6 +27,8 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date 24/12/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public abstract class ImageFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> {
     private CollisionFacet<TShape> m_collision;
     private DrawingFacet<TShape, ?> m_drawing;

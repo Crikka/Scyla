@@ -34,6 +34,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 13/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class ScylaView {
 
     private final Context m_context;

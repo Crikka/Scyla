@@ -26,6 +26,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 01/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class CacheEngine<TSelf extends Shape, Binary> {
 
     private LruCache<Class<? extends TSelf>, Binary> mMemoryCache;

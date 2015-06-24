@@ -168,6 +168,7 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         return m_forcesSystem;
     }
 
+    @Deprecated
     public abstract ImageFacet<TSelf> imageFacet();
 
     @Deprecated

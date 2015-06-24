@@ -32,6 +32,7 @@ import kit.scyla.canvas.shapes.ShapeCanvas;
  * Created by Nelaupe Lucas
  * Date 18/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends ShapeCanvas<TSelf> {
 
     private Bitmap m_skin;

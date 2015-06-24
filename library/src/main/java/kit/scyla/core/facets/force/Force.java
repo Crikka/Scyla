@@ -21,6 +21,8 @@ package kit.scyla.core.facets.force;
  * Created by Ferrand
  * Date 25/11/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
+
 public abstract class Force {
     private int m_instant;
     private int m_stepX;

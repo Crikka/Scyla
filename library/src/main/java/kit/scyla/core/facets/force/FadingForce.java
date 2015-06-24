@@ -21,6 +21,7 @@ package kit.scyla.core.facets.force;
  * Created by Ferrand
  * Date 25/11/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class FadingForce extends Force {
     private int m_initialFaDeCount;
     private int m_fadeCount;

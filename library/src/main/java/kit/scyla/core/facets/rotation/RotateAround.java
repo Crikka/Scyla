@@ -26,6 +26,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 23/12/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class RotateAround<TShape extends Shape<TShape, ?>> extends RotationFacet<TShape> {
 
     @Deprecated

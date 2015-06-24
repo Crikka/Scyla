@@ -33,7 +33,6 @@ import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.debug.FPS;
 import kit.scyla.canvas.render.Scene;
 import kit.scyla.canvas.views.ViewHandler;
-import kit.scyla.canvas.views.templateEngine.GridTemplate;
 import kit.scyla.core.ScylaSurface;
 import kit.scyla.core.ScylaView;
 import kit.scyla.gl.views.ScylaGLView;
@@ -43,6 +42,7 @@ import kit.scyla.gl.views.ScylaGLView;
  * Created by Ferrand
  * Date : 22/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class ScylaGLSurface extends GLSurfaceView implements GLSurfaceView.Renderer, ScylaSurface<ScylaGLView> {
 
     private ViewHandler m_stageHandler;
@@ -50,8 +50,6 @@ public abstract class ScylaGLSurface extends GLSurfaceView implements GLSurfaceV
 
     // For debug engine
     private FPS frameRate = new FPS();
-
-    private GridTemplate grid;
 
     private Context m_context;
 
@@ -66,7 +64,7 @@ public abstract class ScylaGLSurface extends GLSurfaceView implements GLSurfaceV
         holder.addCallback(this);
         holder.setFormat(PixelFormat.TRANSPARENT);
 
-        grid = GridTemplate.getInstance();
+        //GridTemplate grid = GridTemplate.getInstance();
 
         this.m_scene = new Scene() {
 
@@ -166,8 +164,9 @@ public abstract class ScylaGLSurface extends GLSurfaceView implements GLSurfaceV
         m_scene.stopRender();
     }
 
-    public void onBackPressed() {
+    public boolean onBackPressed() {
         m_stageHandler.getCurrent().onBackPressed();
+        return true;
     }
 
     public void onKDown(int keyCode, KeyEvent event) {

@@ -24,6 +24,7 @@ import kit.scyla.BuildConfig;
  * Date 17/10/14
  */
 @Deprecated
+@SuppressWarnings({"unused", "unchecked"})
 public class DebugEngine {
 
     private static DebugEngine INSTANCE = new DebugEngine();
@@ -56,10 +57,10 @@ public class DebugEngine {
     }
 
     @Deprecated
-    public boolean minDebugLevel(Level necessarylevel) {
+    public boolean minDebugLevel(Level necessaryLevel) {
 
         return BuildConfig.DEBUG && (DEBUG_Level != Level.NONE &&
-                (!(necessarylevel == Level.FULL) || DEBUG_Level == Level.FULL));
+                (!(necessaryLevel == Level.FULL) || DEBUG_Level == Level.FULL));
     }
 
 }

@@ -36,6 +36,7 @@ import rx.schedulers.Schedulers;
  * Created by Nelaupe Lucas
  * Date 04/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class Scene {
     private ArrayList<Shape> m_dynamicsElements;
     private ArrayList<Shape> m_staticsElements;
@@ -319,7 +320,7 @@ public abstract class Scene {
         }
     }
 
-    private final void clearUnused(){
+    private void clearUnused() {
         onEachDynamicElement(new Action1<Shape>() {
             @Override
             public void call(Shape shape) {

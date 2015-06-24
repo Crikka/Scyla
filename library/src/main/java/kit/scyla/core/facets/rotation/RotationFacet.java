@@ -26,6 +26,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 23/12/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class RotationFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> {
     protected transient Point m_gravityRotation;
     protected double m_radius;

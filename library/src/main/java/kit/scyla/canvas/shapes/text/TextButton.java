@@ -27,6 +27,7 @@ import kit.scyla.canvas.facets.drawing.TextButtonDrawingFacet;
  * Created by Nelaupe Lucas
  * Date 13/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class TextButton extends Text {
 
     public TextButton(Context context, int text, Point point) {

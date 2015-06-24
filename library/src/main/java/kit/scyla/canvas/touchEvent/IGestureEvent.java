@@ -25,16 +25,17 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 04/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public interface IGestureEvent {
 
-    public void onTouchEvent(Shape shape, Point PointFinger);
+    void onTouchEvent(Shape shape, Point PointFinger);
 
-    public void onMovingEvent(Shape shape, Point PointFinger);
+    void onMovingEvent(Shape shape, Point PointFinger);
 
-    public void onLongPressEvent(Shape shape, Point PointFinger);
+    void onLongPressEvent(Shape shape, Point PointFinger);
 
-    public void onDoubleTapEvent(Shape shape, Point PointFinger);
+    void onDoubleTapEvent(Shape shape, Point PointFinger);
 
-    public void onRaiseEvent(Shape shape, Point PointFinger);
+    void onRaiseEvent(Shape shape, Point PointFinger);
 
 }

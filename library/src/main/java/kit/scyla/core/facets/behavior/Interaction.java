@@ -23,6 +23,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date : 06/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class Interaction<TShape1 extends Shape, TShape2 extends Shape> {
     private TShape1 m_shape1;
     private TShape2 m_shape2;

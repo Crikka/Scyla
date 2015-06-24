@@ -26,6 +26,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date : 23/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> implements GravityCenter {
 
     private Point m_position;

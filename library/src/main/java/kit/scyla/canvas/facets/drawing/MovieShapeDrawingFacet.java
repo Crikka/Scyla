@@ -29,6 +29,7 @@ import kit.scyla.canvas.shapes.custom.movies.MovieShape;
  * Created by Nelaupe Lucas
  * Date 17/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class MovieShapeDrawingFacet<TShape extends MovieShape<TShape>> extends DrawingCanvasFacet<TShape> {
     private long movieStart = 0;
 

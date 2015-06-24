@@ -21,6 +21,7 @@ package kit.scyla.core.facets.force;
  * Created by Ferrand
  * Date 25/11/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class Gravity extends Force {
     static double G = 0.01;
     private static Gravity INSTANCE = null;

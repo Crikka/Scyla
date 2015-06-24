@@ -31,6 +31,7 @@ import kit.scyla.canvas.views.ViewHandler;
  * Created by Nelaupe Lucas
  * Date 04/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class ScylaFragment<TSurface extends SurfaceView> extends Fragment {
 
     public static final String INITIALIZE = "surface";

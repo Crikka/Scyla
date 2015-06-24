@@ -24,7 +24,7 @@ package kit.scyla.canvas.debug;
 public class FPS {
 
     private long mLastTime = 0;
-    private int frameps = 0, ifps = 0;
+    private int framePerSecond = 0, iFPS = 0;
 
     /**
      * Calculates and returns frames per second
@@ -32,13 +32,13 @@ public class FPS {
     private long fps() {
         long now = System.currentTimeMillis();
 
-        ifps++;
+        iFPS++;
         if (now > (mLastTime + 1000)) {
             mLastTime = now;
-            frameps = ifps;
-            ifps = 0;
+            framePerSecond = iFPS;
+            iFPS = 0;
         }
-        return frameps;
+        return framePerSecond;
     }
 
     public String getFPS() {

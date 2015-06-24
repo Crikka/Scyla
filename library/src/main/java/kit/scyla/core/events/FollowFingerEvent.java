@@ -27,6 +27,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 11/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class FollowFingerEvent<TSelf extends Shape<TSelf, ?>> extends TouchEvent {
 
     private TSelf m_shape;

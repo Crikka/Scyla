@@ -23,6 +23,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 02/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class NoneMovingFacet<TShape extends Shape<TShape, ?>> extends MovingFacet<TShape> {
     @Override
     public void onMoveNewPosition() {

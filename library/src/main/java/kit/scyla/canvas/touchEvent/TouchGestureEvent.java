@@ -29,6 +29,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 04/01/15
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class TouchGestureEvent implements IGestureEvent {
 
     /**
@@ -106,7 +107,7 @@ public abstract class TouchGestureEvent implements IGestureEvent {
         Shape res = null;
 
         for (Shape element : touchedShape) {
-            if(element.collisionFacet() == null) {
+            if (element.collisionFacet() == null) {
                 throw new IllegalStateException("A shape that can be touch cannot be a phantom element");
             } else {
                 if (element.collisionFacet().fingerOn(PointFinger.x, PointFinger.y)) {

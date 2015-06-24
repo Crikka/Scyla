@@ -28,6 +28,7 @@ import kit.scyla.canvas.shapes.text.Text;
  * Created by Nelaupe Lucas
  * Date 13/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class TextButtonDrawingFacet extends TextDrawingFacet {
 
     public TextButtonDrawingFacet() {

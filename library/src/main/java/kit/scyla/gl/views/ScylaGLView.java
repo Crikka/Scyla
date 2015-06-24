@@ -26,6 +26,7 @@ import kit.scyla.core.ScylaView;
  * Created by Ferrand
  * Date : 22/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class ScylaGLView extends ScylaView {
     public ScylaGLView(ViewHandler handler, Context context) {
         super(handler, context);

@@ -29,6 +29,7 @@ import rx.functions.Action0;
  * Created by Ferrand
  * Date 29/11/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class ViewHandler {
     private ScylaView m_current;
     private Scene m_scene;
@@ -42,6 +43,29 @@ public abstract class ViewHandler {
 
     public final ScylaView getCurrent() {
         return m_current;
+    }
+
+    public void setCurrent(final Class<? extends ScylaCanvasView> viewClass) {
+
+        m_scene.subscribeRuntimeAction(new Action0() {
+            @Override
+            public void call() {
+
+                if (viewClass == null) {
+                    return;
+                }
+
+                try {
+                    Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
+                    m_current = constructor.newInstance(ViewHandler.this, m_context);
+                    onNext();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    throw new RuntimeException(e);
+                }
+
+            }
+        });
     }
 
     public void setCurrent(final ScylaView view) {
@@ -82,29 +106,6 @@ public abstract class ViewHandler {
     public void setCurrentView(ScylaView view) {
         m_current = view;
         onNext();
-    }
-
-    public void setCurrent(final Class<? extends ScylaCanvasView> viewClass) {
-
-        m_scene.subscribeRuntimeAction(new Action0() {
-            @Override
-            public void call() {
-
-                if (viewClass == null) {
-                    return;
-                }
-
-                try {
-                    Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
-                    m_current = constructor.newInstance(ViewHandler.this, m_context);
-                    onNext();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    throw new RuntimeException(e);
-                }
-
-            }
-        });
     }
 
     public abstract ScylaView bootstrap(ViewHandler handler);

@@ -44,6 +44,7 @@ import rx.functions.Action1;
  * Created by Ferrand
  * Date : 22/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceHolder.Callback, ScylaSurface<ScylaCanvasView> {
 
     private ViewHandler m_stageHandler;
@@ -120,7 +121,7 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
                 if (BuildConfig.DEBUG) {
                     Paint p = new Paint();
                     p.setColor(Color.RED);
-                    if(shape.collisionFacet() != null) {
+                    if (shape.collisionFacet() != null) {
                         canvas.drawRect(shape.collisionFacet().getHitBox().getBounds(), p);
                     }
                 }
@@ -171,8 +172,9 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
         m_scene.stopRender();
     }
 
-    public void onBackPressed() {
+    public boolean onBackPressed() {
         m_stageHandler.getCurrent().onBackPressed();
+        return true;
     }
 
     @Override

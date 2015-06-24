@@ -30,6 +30,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Nelaupe Lucas
  * Date 21/12/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class BarOfShape<TShape extends SkinnedShape<TShape>> extends CombinationShapes<TShape> {
 
     private Context m_context;

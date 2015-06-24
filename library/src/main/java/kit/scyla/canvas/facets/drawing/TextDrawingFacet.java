@@ -26,6 +26,7 @@ import kit.scyla.canvas.shapes.text.Text;
  * Created by Nelaupe Lucas
  * Date 13/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public class TextDrawingFacet extends DrawingCanvasFacet<Text> {
 
     public TextDrawingFacet() {
