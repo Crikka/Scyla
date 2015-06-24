@@ -29,14 +29,11 @@ import kit.scyla.canvas.touchEvent.TouchTypeEvent;
 import kit.scyla.core.facets.behavior.Interaction;
 import kit.scyla.core.facets.behavior.InteractionType;
 import kit.scyla.core.facets.collision.CollisionFacet;
-import kit.scyla.core.facets.collision.NoneCollisionFacet;
 import kit.scyla.core.facets.drawing.DrawingFacet;
 import kit.scyla.core.facets.force.ForcesSystem;
 import kit.scyla.core.facets.gravityCenter.GravityCenterFacet;
 import kit.scyla.core.facets.image.ImageFacet;
 import kit.scyla.core.facets.moving.MovingFacet;
-import kit.scyla.core.facets.moving.NoneMovingFacet;
-import kit.scyla.core.facets.rotation.NoneRotationFacet;
 import kit.scyla.core.facets.rotation.RotationFacet;
 import rx.functions.Action0;
 
@@ -45,6 +42,7 @@ import rx.functions.Action0;
  * Created by Ferrand
  * Date 03/10/2014
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
     /* ----- Facet ----- */
     private CollisionFacet<TSelf> m_collisionFacet;
@@ -69,32 +67,32 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         this.m_interactions = new ArrayList<>();
         this.m_fingerEvents = new ArrayList<>();
         this.m_gravityCenter = gravityCenter;
-
         m_actionOnEachTick = new HashMap<>();
 
         defineGravityCenterFacet(new GravityCenterFacet<TSelf>(gravityCenter));
     }
 
-    @SuppressWarnings("unchecked")
-    private final void defineGravityCenterFacet(GravityCenterFacet<TSelf> gravityCenterFacet) {
+
+    private void defineGravityCenterFacet(GravityCenterFacet<TSelf> gravityCenterFacet) {
         gravityCenterFacet.defineShape((TSelf) this);
         this.m_gravityCenterFacet = gravityCenterFacet;
     }
 
-    @SuppressWarnings("unchecked")
     public final void defineCollisionFacet(CollisionFacet<TSelf> collisionFacet) {
         collisionFacet.defineShape((TSelf) this);
         this.m_collisionFacet = collisionFacet;
     }
 
-    @SuppressWarnings("unchecked")
+    public final void defineCollisionFacetFrom(Shape shape) {
+        this.m_collisionFacet = shape.collisionFacet();
+    }
+
     public abstract void defineDrawingFacet(DrawingFacet<TSelf, TSlate> drawingFacet);
 
     public final void subscribeFingerEvent(TouchEvent... fingerEvent) {
         Collections.addAll(this.m_fingerEvents, fingerEvent);
     }
 
-    @SuppressWarnings("unchecked")
     public final void defineRotationFacet(RotationFacet<TSelf> rotationFacet) {
         rotationFacet.defineShape((TSelf) this);
         this.m_rotationFacet = rotationFacet;
@@ -107,7 +105,6 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         });
     }
 
-    @SuppressWarnings("unchecked")
     public final void defineMovingFacet(MovingFacet<TSelf> moveFacet) {
         moveFacet.defineShape((TSelf) this);
         this.m_movingFacet = moveFacet;
@@ -125,14 +122,12 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         Collections.addAll(this.m_interactions, interactions);
     }
 
-    @SuppressWarnings("unchecked")
     public final void interactWith(Shape other) {
         for (Interaction<TSelf, ? extends Shape> interaction : m_interactions) {
             interaction.onInteract(this, other, InteractionType.Enter);
         }
     }
 
-    @SuppressWarnings("unchecked")
     public final void maintainWith(Shape other) {
         for (Interaction<TSelf, ? extends Shape> interaction : m_interactions) {
             interaction.onInteract(this, other, InteractionType.Hover);
@@ -154,33 +149,18 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
     public abstract DrawingFacet<TSelf, TSlate> drawingFacet();
 
     public final CollisionFacet<TSelf> collisionFacet() {
-        if (m_collisionFacet == null) {
-            defineCollisionFacet(new NoneCollisionFacet<TSelf>());
-        }
-
         return m_collisionFacet;
     }
 
     public final RotationFacet<TSelf> rotationFacet() {
-        if (m_rotationFacet == null) {
-            defineRotationFacet(new NoneRotationFacet<TSelf>());
-        }
-
         return m_rotationFacet;
     }
 
     public final MovingFacet<TSelf> movingFacet() {
-        if (m_movingFacet == null) {
-            defineMovingFacet(new NoneMovingFacet<TSelf>());
-        }
         return m_movingFacet;
     }
 
     public final GravityCenterFacet<TSelf> gravityCenterFacet() {
-        if (m_gravityCenterFacet == null) {
-            defineGravityCenterFacet(new GravityCenterFacet<TSelf>(null));
-        }
-
         return m_gravityCenterFacet;
     }
 
@@ -210,5 +190,13 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
 
     public void removeRotation() {
         m_actionOnEachTick.remove("rotation");
+    }
+
+    public void removeCollision() {
+        this.m_forcesSystem = null;
+        this.m_interactions = new ArrayList<>();
+        this.m_fingerEvents = new ArrayList<>();
+        m_actionOnEachTick = new HashMap<>();
+        m_collisionFacet = null;
     }
 }
