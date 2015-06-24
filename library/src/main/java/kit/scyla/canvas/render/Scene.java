@@ -87,6 +87,7 @@ public abstract class Scene {
                     m_phantomsElements.clear();
                     stage.setup();
                     stage.addElements(self, m_width, m_height);
+                    clearUnused();
                     m_reload = false;
                 }
 
@@ -312,15 +313,33 @@ public abstract class Scene {
 
     public final void play() {
         if (!m_play) {
-            onEachElement(new Action1<Shape>() {
-                @Override
-                public void call(Shape shape) {
-                    shape.collisionFacet().recalculateContactArea();
-                }
-            });
+            clearUnused();
 
             m_play = true;
         }
+    }
+
+    private final void clearUnused(){
+        onEachDynamicElement(new Action1<Shape>() {
+            @Override
+            public void call(Shape shape) {
+                shape.collisionFacet().recalculateContactArea();
+            }
+        });
+
+        onEachStaticElement(new Action1<Shape>() {
+            @Override
+            public void call(Shape shape) {
+                shape.collisionFacet().recalculateContactArea();
+            }
+        });
+
+        onEachPhantomElement(new Action1<Shape>() {
+            @Override
+            public void call(Shape shape) {
+                shape.removeCollision();
+            }
+        });
     }
 
     public final boolean isPaused() {
