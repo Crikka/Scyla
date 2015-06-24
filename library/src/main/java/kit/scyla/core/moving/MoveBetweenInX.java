@@ -29,11 +29,6 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public class MoveBetweenInX<TShape extends Shape<TShape, ?>> extends MovingFacet<TShape> {
 
-    @Deprecated
-    public MoveBetweenInX(TShape shape, int speed, Point pointA, Point pointB) {
-        super(speed, pointA, pointB);
-    }
-
     public MoveBetweenInX(int speed, Point pointA, Point pointB) {
         super(speed, pointA, pointB);
     }

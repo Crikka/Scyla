@@ -102,12 +102,6 @@ public abstract class ViewHandler {
         return m_context;
     }
 
-    @Deprecated
-    public void setCurrentView(ScylaView view) {
-        m_current = view;
-        onNext();
-    }
-
     public abstract ScylaView bootstrap(ViewHandler handler);
 
 }

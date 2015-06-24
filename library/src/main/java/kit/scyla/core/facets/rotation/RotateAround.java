@@ -29,18 +29,8 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public class RotateAround<TShape extends Shape<TShape, ?>> extends RotationFacet<TShape> {
 
-    @Deprecated
-    public RotateAround(int speed, Point point, boolean clockwise) {
-        super(speed, point, clockwise);
-    }
-
     public RotateAround(int speed, Point point) {
         super(speed, point);
-    }
-
-    @Deprecated
-    public RotateAround(int speed, Point point, boolean clockwise, double offset) {
-        super(speed, point, clockwise, offset);
     }
 
     public RotateAround(int speed, Point point, double offset) {

@@ -23,7 +23,6 @@ import java.io.InputStream;
 
 import kit.scyla.canvas.cache.MovieShapeCache;
 import kit.scyla.canvas.facets.drawing.MovieShapeDrawingFacet;
-import kit.scyla.canvas.facets.image.MovieShapeImageFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;
 
 /**
@@ -31,11 +30,11 @@ import kit.scyla.canvas.shapes.ShapeCanvas;
  * Created by Nelaupe Lucas
  * Date 19/10/14
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class MovieShape<TSelf extends MovieShape<TSelf>> extends ShapeCanvas<TSelf> {
 
     private Movie m_movie;
 
-    @SuppressWarnings("unchecked")
     public MovieShape(InputStream skin, Point position) {
         super(position);
 
@@ -57,9 +56,4 @@ public abstract class MovieShape<TSelf extends MovieShape<TSelf>> extends ShapeC
         return m_movie;
     }
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public MovieShapeImageFacet<TSelf> imageFacet() {
-        return new MovieShapeImageFacet<>();
-    }
 }

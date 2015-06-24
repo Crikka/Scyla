@@ -27,7 +27,6 @@ import kit.scyla.canvas.facets.collision.TextCollisionFacet;
 import kit.scyla.canvas.facets.drawing.TextDrawingFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;
 import kit.scyla.core.facets.behavior.GroundInteraction;
-import kit.scyla.core.facets.image.ImageFacet;
 
 /**
  * Created with IntelliJ
@@ -98,11 +97,6 @@ public class Text extends ShapeCanvas<Text> {
     public void setColor(int color) {
         m_color = color;
         recalculateDrawing();
-    }
-
-    @Override
-    public ImageFacet<Text> imageFacet() {
-        return null; // TODO
     }
 
     public int getTextWidth() {

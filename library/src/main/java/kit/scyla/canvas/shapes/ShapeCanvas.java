@@ -28,6 +28,7 @@ import kit.scyla.core.shapes.Shape;
  * Created by Ferrand
  * Date : 23/01/2015
  */
+@SuppressWarnings({"unused", "unchecked"})
 public abstract class ShapeCanvas<TSelf extends ShapeCanvas<TSelf>> extends Shape<TSelf, Canvas> {
     private DrawingFacet<TSelf, Canvas> m_drawingFacet;
 
@@ -35,7 +36,6 @@ public abstract class ShapeCanvas<TSelf extends ShapeCanvas<TSelf>> extends Shap
         super(gravityCenter);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public final void defineDrawingFacet(DrawingFacet<TSelf, Canvas> drawingFacet) {
         drawingFacet.defineShape((TSelf) this);

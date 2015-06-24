@@ -21,7 +21,6 @@ import android.graphics.Point;
 
 import kit.scyla.canvas.facets.collision.InputTextCollisionFacet;
 import kit.scyla.canvas.facets.drawing.InputTextDrawingFacet;
-import kit.scyla.core.facets.image.ImageFacet;
 
 /**
  * Created with IntelliJ
@@ -36,12 +35,6 @@ public class InputText extends Text {
 
         defineDrawingFacet(new InputTextDrawingFacet());
         defineCollisionFacet(new InputTextCollisionFacet());
-    }
-
-    @Override
-    public ImageFacet<Text> imageFacet() {
-        // TODO
-        return null;
     }
 
     @Override

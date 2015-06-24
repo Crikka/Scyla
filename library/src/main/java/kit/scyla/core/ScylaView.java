@@ -95,11 +95,6 @@ public abstract class ScylaView {
         touchGestureEvent.clear();
     }
 
-    @Deprecated
-    public final void switchToView(ScylaView view) {
-        handler().load(view);
-    }
-
     public void subscribeTouchListener(Shape shape, TouchEvent... events) {
         touchGestureEvent.addElement(shape);
 

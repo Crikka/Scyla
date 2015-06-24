@@ -42,16 +42,6 @@ public abstract class RotationFacet<TShape extends Shape<TShape, ?>> extends Fac
         this.m_clockwise = true;
     }
 
-    @Deprecated
-    public RotationFacet(int speed, Point point, boolean clockwise) {
-        super();
-
-        m_gravityRotation = point;
-        m_rotation = 0;
-        m_speedRotation = speed;
-        this.m_clockwise = clockwise;
-    }
-
     public RotationFacet(int speed, Point point) {
         super();
 
@@ -59,16 +49,6 @@ public abstract class RotationFacet<TShape extends Shape<TShape, ?>> extends Fac
         m_rotation = 0;
         m_speedRotation = speed;
         this.m_clockwise = true;
-    }
-
-    @Deprecated
-    public RotationFacet(int speed, Point point, boolean clockwise, double offset) {
-        super();
-
-        m_gravityRotation = point;
-        m_rotation = offset;
-        m_speedRotation = speed;
-        this.m_clockwise = clockwise;
     }
 
     public RotationFacet(int speed, Point point, double offset) {

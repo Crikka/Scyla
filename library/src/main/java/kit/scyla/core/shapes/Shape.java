@@ -32,7 +32,6 @@ import kit.scyla.core.facets.collision.CollisionFacet;
 import kit.scyla.core.facets.drawing.DrawingFacet;
 import kit.scyla.core.facets.force.ForcesSystem;
 import kit.scyla.core.facets.gravityCenter.GravityCenterFacet;
-import kit.scyla.core.facets.image.ImageFacet;
 import kit.scyla.core.facets.moving.MovingFacet;
 import kit.scyla.core.facets.rotation.RotationFacet;
 import rx.functions.Action0;
@@ -55,8 +54,6 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
     private ArrayList<TouchEvent> m_fingerEvents = null;
     private ForcesSystem m_forcesSystem;
 
-    /* ---- Data ---- */
-    private Point m_gravityCenter;
     /* -------------- */
 
     private HashMap<String, Action0> m_actionOnEachTick;
@@ -66,7 +63,6 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         this.m_forcesSystem = new ForcesSystem(this);
         this.m_interactions = new ArrayList<>();
         this.m_fingerEvents = new ArrayList<>();
-        this.m_gravityCenter = gravityCenter;
         m_actionOnEachTick = new HashMap<>();
 
         defineGravityCenterFacet(new GravityCenterFacet<TSelf>(gravityCenter));
@@ -140,12 +136,6 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
         }
     }
 
-    @Deprecated
-    public void follow(Shape shape) {
-        gravityCenterFacet().follow(shape);
-    }
-
-
     public abstract DrawingFacet<TSelf, TSlate> drawingFacet();
 
     public final CollisionFacet<TSelf> collisionFacet() {
@@ -166,14 +156,6 @@ public abstract class Shape<TSelf extends Shape<TSelf, TSlate>, TSlate> {
 
     public final ForcesSystem forcesSystem() {
         return m_forcesSystem;
-    }
-
-    @Deprecated
-    public abstract ImageFacet<TSelf> imageFacet();
-
-    @Deprecated
-    public Point getGravityCenter() {
-        return m_gravityCenter;
     }
 
     public final void hide() {

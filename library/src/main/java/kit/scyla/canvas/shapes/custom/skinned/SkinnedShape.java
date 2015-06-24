@@ -24,7 +24,6 @@ import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.cache.SkinnedShapeCache;
 import kit.scyla.canvas.facets.collision.SkinnedShapeCollisionFacet;
 import kit.scyla.canvas.facets.drawing.SkinnedShapeDrawingFacet;
-import kit.scyla.canvas.facets.image.SkinnedShapeImageFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;
 
 /**
@@ -37,7 +36,6 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
 
     private Bitmap m_skin;
 
-    @SuppressWarnings("unchecked")
     public SkinnedShape(Bitmap skin, Point position, boolean autoScale) {
         super(position);
 
@@ -77,8 +75,4 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
         return m_skin;
     }
 
-    @Override
-    public SkinnedShapeImageFacet<TSelf> imageFacet() {
-        return new SkinnedShapeImageFacet<>();
-    }
 }
