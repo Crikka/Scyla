@@ -34,7 +34,6 @@ public class MoveBetweenInX<TShape extends Shape<TShape, ?>> extends MovingFacet
         super(speed, pointA, pointB);
     }
 
-    @Deprecated
     public MoveBetweenInX(int speed, Point pointA, Point pointB) {
         super(speed, pointA, pointB);
     }
