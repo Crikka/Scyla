@@ -106,9 +106,14 @@ public abstract class TouchGestureEvent implements IGestureEvent {
         Shape res = null;
 
         for (Shape element : touchedShape) {
-            if (element.collisionFacet().fingerOn(PointFinger.x, PointFinger.y)) {
-                res = element;
-                break;
+            if(element.collisionFacet() == null) {
+                throw new IllegalStateException("A shape that can be touch cannot be a phantom element");
+            } else {
+                if (element.collisionFacet().fingerOn(PointFinger.x, PointFinger.y)) {
+                    res = element;
+                    break;
+
+                }
             }
         }
 

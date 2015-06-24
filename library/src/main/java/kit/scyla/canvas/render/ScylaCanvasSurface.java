@@ -120,7 +120,9 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
                 if (BuildConfig.DEBUG) {
                     Paint p = new Paint();
                     p.setColor(Color.RED);
-                    canvas.drawRect(shape.collisionFacet().getHitBox().getBounds(), p);
+                    if(shape.collisionFacet() != null) {
+                        canvas.drawRect(shape.collisionFacet().getHitBox().getBounds(), p);
+                    }
                 }
                 shape.drawingFacet().draw(canvas);
 
