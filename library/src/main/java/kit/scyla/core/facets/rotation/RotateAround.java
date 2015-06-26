@@ -43,10 +43,8 @@ public class RotateAround<TShape extends Shape<TShape, ?>> extends RotationFacet
         int xToGo = (int) (m_gravityRotation.x + m_radius * Math.cos(m_rotation));
         int yToGo = (int) (m_gravityRotation.y + m_radius * Math.sin(m_rotation));
 
-        Point pointToGo = new Point(xToGo, yToGo);
-
         m_rotation += (m_clockwise ? m_speedRotation : -m_speedRotation) / 70;
 
-        shape().gravityCenterFacet().moveGravityCenterTo(pointToGo);
+        shape().gravityCenterFacet().moveGravityCenterTo(xToGo, yToGo);
     }
 }
