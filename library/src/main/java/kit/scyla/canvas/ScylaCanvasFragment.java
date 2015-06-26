@@ -47,6 +47,9 @@ public class ScylaCanvasFragment extends ScylaFragment<ScylaCanvasSurface> {
 
                     try {
                         Class<ScylaCanvasView> viewClass = (Class<ScylaCanvasView>) getArguments().getSerializable(INITIALIZE);
+                        if(viewClass == null) {
+                            throw new RuntimeException("Unable to get the class");
+                        }
                         Constructor<ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
                         return constructor.newInstance(handler, context);
                     } catch (Exception e) {
