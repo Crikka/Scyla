@@ -30,6 +30,7 @@ import kit.scyla.core.ScylaView;
  * Date 15/01/15
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public abstract class Scyla<TSurface extends SurfaceView & ScylaSurface<TView>, TView extends ScylaView> {
 
     @Deprecated

@@ -29,6 +29,7 @@ import kit.scyla.gl.views.ScylaGLView;
  * Date : 22/01/2015
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public abstract class ScylaGL extends Scyla<ScylaGLSurface, ScylaGLView> {
 
     @Override

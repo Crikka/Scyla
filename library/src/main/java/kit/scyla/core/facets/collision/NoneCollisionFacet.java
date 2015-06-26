@@ -26,6 +26,7 @@ import kit.scyla.core.shapes.Shape;
  * Date 25/12/2014
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public class NoneCollisionFacet<TShape extends Shape<TShape, ?>> extends CollisionFacet<TShape> {
     @Override
     protected Region determineRegion() {

@@ -24,6 +24,7 @@ import kit.scyla.core.shapes.Shape;
  * Date 02/01/15
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public class NoneMovingFacet<TShape extends Shape<TShape, ?>> extends MovingFacet<TShape> {
     @Override
     public void onMoveNewPosition() {

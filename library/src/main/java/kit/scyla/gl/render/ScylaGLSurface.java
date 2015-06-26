@@ -43,6 +43,7 @@ import kit.scyla.gl.views.ScylaGLView;
  * Date : 22/01/2015
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public abstract class ScylaGLSurface extends GLSurfaceView implements GLSurfaceView.Renderer, ScylaSurface<ScylaGLView> {
 
     private ViewHandler m_stageHandler;
