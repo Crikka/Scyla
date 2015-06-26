@@ -28,7 +28,7 @@ import kit.scyla.core.cache.CacheEngine;
  */
 public class MovieShapeCache extends CacheEngine<MovieShape, Movie> {
 
-    private static MovieShapeCache INSTANCE = new MovieShapeCache();
+    private static final MovieShapeCache INSTANCE = new MovieShapeCache();
 
     private MovieShapeCache() {
         super();
