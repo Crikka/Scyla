@@ -36,6 +36,7 @@ import kit.scyla.canvas.views.ViewHandler;
 import kit.scyla.canvas.views.templateEngine.GridTemplate;
 import kit.scyla.core.ScylaSurface;
 import kit.scyla.core.ScylaView;
+import kit.scyla.core.facets.drawing.DrawingFacet;
 import kit.scyla.core.shapes.Shape;
 import rx.functions.Action1;
 
@@ -125,7 +126,10 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
                         canvas.drawRect(shape.collisionFacet().getHitBox().getBounds(), p);
                     }
                 }
-                shape.drawingFacet().draw(canvas);
+                DrawingFacet facet = shape.drawingFacet();
+                if(facet != null) {
+                    facet.draw(canvas);
+                }
 
                 if (BuildConfig.DEBUG) {
                     Paint p = new Paint();

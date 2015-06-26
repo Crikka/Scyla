@@ -25,6 +25,7 @@ import kit.scyla.canvas.shapes.ShapeCanvas;
  * Created by Ferrand
  * Date 25/12/2014
  */
+@Deprecated
 public class NoneDrawingCanvasFacet<TShape extends ShapeCanvas<TShape>> extends DrawingCanvasFacet<TShape> {
     @Override
     public void draw(Canvas canvas) {

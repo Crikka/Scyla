@@ -19,7 +19,6 @@ package kit.scyla.canvas.shapes;
 import android.graphics.Canvas;
 import android.graphics.Point;
 
-import kit.scyla.canvas.facets.drawing.NoneDrawingCanvasFacet;
 import kit.scyla.core.facets.drawing.DrawingFacet;
 import kit.scyla.core.shapes.Shape;
 
@@ -45,10 +44,6 @@ public abstract class ShapeCanvas<TSelf extends ShapeCanvas<TSelf>> extends Shap
 
     @Override
     public DrawingFacet<TSelf, Canvas> drawingFacet() {
-        if (m_drawingFacet == null) {
-            defineDrawingFacet(new NoneDrawingCanvasFacet<TSelf>());
-        }
-
         return m_drawingFacet;
     }
 }
