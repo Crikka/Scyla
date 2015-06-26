@@ -41,8 +41,4 @@ public class MovieShapeCollisionFacet<TShape extends MovieShape<TShape>> extends
         return genericDetermineRegion();
     }
 
-    @Override
-    public boolean fingerOn(int x, int y) {
-        return genericDetermineRegion().contains(x, y);
-    }
 }

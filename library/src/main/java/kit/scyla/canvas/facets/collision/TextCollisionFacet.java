@@ -27,6 +27,7 @@ import kit.scyla.core.facets.collision.CollisionFacet;
  * Date 10/10/2014
  */
 public class TextCollisionFacet extends CollisionFacet<Text> {
+
     private Region genericDetermineRegion() {
 
         int width = shape().getTextWidth();
@@ -60,11 +61,6 @@ public class TextCollisionFacet extends CollisionFacet<Text> {
     @Override
     protected Region determineRegion() {
         return genericDetermineRegion();
-    }
-
-    @Override
-    public boolean fingerOn(int x, int y) {
-        return genericDetermineRegion().contains(x, y);
     }
 
 }

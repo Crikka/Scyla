@@ -33,8 +33,4 @@ public class NoneCollisionFacet<TShape extends Shape<TShape, ?>> extends Collisi
         return new Region();
     }
 
-    @Override
-    public boolean fingerOn(int x, int y) {
-        return false;
-    }
 }

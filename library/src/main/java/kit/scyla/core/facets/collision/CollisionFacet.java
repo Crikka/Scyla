@@ -27,6 +27,7 @@ import kit.scyla.core.shapes.Shape;
  * Date 04/10/2014
  */
 public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> {
+
     private transient Region m_region;
 
     public CollisionFacet() {
@@ -38,7 +39,9 @@ public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Fa
         this.m_region = determineRegion();
     }
 
-    public abstract boolean fingerOn(int x, int y);
+    public boolean fingerOn(int x, int y){
+        return getHitBox().contains(x, y);
+    }
 
     protected abstract Region determineRegion();
 

@@ -40,8 +40,4 @@ public class SkinnedShapeCollisionFacet<TShape extends SkinnedShape<TShape>> ext
         return genericDetermineRegion();
     }
 
-    @Override
-    public boolean fingerOn(int x, int y) {
-        return genericDetermineRegion().contains(x, y);
-    }
 }
