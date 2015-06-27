@@ -43,14 +43,17 @@ public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<T
     @Override
     public void moveGravityCenterTo(int x, int y) {
         m_position.set(x, y);
+        shape().collisionFacet().recalculateContactArea();
     }
 
     public final void moveGravityCenterTo(Point point) {
         moveGravityCenterTo(point.x, point.y);
+        shape().collisionFacet().recalculateContactArea();
     }
 
     public final void offsetGravityCenter(int x, int y) {
         moveGravityCenterTo(m_position.x + x, m_position.y + y);
+        shape().collisionFacet().recalculateContactArea();
     }
 
     @Override
