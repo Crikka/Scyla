@@ -29,6 +29,7 @@ import kit.scyla.canvas.shapes.text.Text;
  * Date 13/10/14
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public class InputTextDrawingFacet extends TextDrawingFacet {
 
     public InputTextDrawingFacet() {

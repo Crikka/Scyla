@@ -26,6 +26,7 @@ import kit.scyla.core.facets.collision.CollisionFacet;
  * Created by Ferrand
  * Date 10/10/2014
  */
+@Deprecated
 public class InputTextCollisionFacet extends CollisionFacet<Text> {
 
     public InputTextCollisionFacet() {

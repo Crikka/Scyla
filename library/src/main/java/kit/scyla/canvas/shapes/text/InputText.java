@@ -28,6 +28,7 @@ import kit.scyla.canvas.facets.drawing.InputTextDrawingFacet;
  * Date 13/10/14
  */
 @SuppressWarnings({"unused", "unchecked"})
+@Deprecated
 public class InputText extends Text {
 
     public InputText(Context context, int text, Point point) {
