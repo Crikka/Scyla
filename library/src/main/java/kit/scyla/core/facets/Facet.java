@@ -16,8 +16,6 @@
 
 package kit.scyla.core.facets;
 
-import java.io.Serializable;
-
 import kit.scyla.core.shapes.Shape;
 
 /**
@@ -26,7 +24,7 @@ import kit.scyla.core.shapes.Shape;
  * Date 04/10/2014
  */
 @SuppressWarnings({"unused", "unchecked"})
-public abstract class Facet<TShape extends Shape> implements Serializable {
+public abstract class Facet<TShape extends Shape> {
     private transient TShape m_shape;
 
     public abstract void onShapeDefined(TShape shape);
