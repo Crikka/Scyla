@@ -39,9 +39,4 @@ public class myView extends ScylaCanvasView {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-
-    }
-
 }
