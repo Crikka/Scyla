@@ -38,7 +38,7 @@ def generatePom() {
             groupId project.group
             artifactId project.name
             version project.version
-            description 'Game engine for Android'
+            description 'Canvas engine for Android'
             inceptionYear '2015'
             url 'http://www.lucas-nelaupe.fr'
 
@@ -51,9 +51,9 @@ def generatePom() {
             }
 
             scm {
-                url "https://github.com/Crikka/Scyla"
-                connection "scm:git:git@github.com:crikka/scyla.git"
-                developerConnection "scm:git:git@github.com:crikka/scyla.git"
+                url "https://github.com/lucas34/Scyla"
+                connection "scm:git:git@github.com:lucas34/scyla.git"
+                developerConnection "scm:git:git@github.com:lucas34/scyla.git"
             }
 
 
