@@ -28,7 +28,8 @@ import kit.scyla.core.shapes.Shape;
  */
 public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> {
 
-    private transient Region m_region;
+    private Region m_regionHitBox;
+    private Region m_regionFingerHitBox;
 
     public CollisionFacet() {
         super();
@@ -36,24 +37,33 @@ public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Fa
 
     @Override
     public void onShapeDefined(TShape shape) {
-        this.m_region = determineRegion();
+        this.m_regionHitBox = determineRegion();
     }
 
     public boolean fingerOn(int x, int y){
-        return getHitBox().contains(x, y);
+        return getTouchHitBox().contains(x, y);
     }
 
     protected abstract Region determineRegion();
 
+    protected Region determineFingerRegion() {
+        return m_regionHitBox;
+    }
+
     public final Region getHitBox() {
-        return m_region;
+        return m_regionHitBox;
+    }
+
+    public Region getTouchHitBox() {
+        return m_regionFingerHitBox;
     }
 
     public final void recalculateContactArea() {
-        m_region = determineRegion();
+        m_regionHitBox = determineRegion();
+        m_regionFingerHitBox = determineFingerRegion();
     }
 
     public final boolean intersect(Shape other) {
-        return (!m_region.quickReject(other.collisionFacet().getHitBox()) && m_region.op(other.collisionFacet().getHitBox(), Region.Op.INTERSECT));
+        return (!m_regionHitBox.quickReject(other.collisionFacet().getHitBox()) && m_regionHitBox.op(other.collisionFacet().getHitBox(), Region.Op.INTERSECT));
     }
 }
