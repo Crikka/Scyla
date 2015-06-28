@@ -28,8 +28,8 @@ import kit.scyla.core.facets.collision.CollisionFacet;
  */
 public class TextCollisionFacet extends CollisionFacet<Text> {
 
-    private Region genericDetermineRegion() {
-
+    @Override
+    protected void determineRegion(Region hitBox, Region fingerHitBox) {
         int width = shape().getTextWidth();
         int height = shape().getTextHeight();
 
@@ -43,24 +43,10 @@ public class TextCollisionFacet extends CollisionFacet<Text> {
             int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height / 2;
 
 
-            return new Region(topX, topY, bottomX, bottomY);
+            hitBox.set(topX, topY, bottomX, bottomY);
+            fingerHitBox.set(topX, topY, bottomX, bottomY);
 
-        } else {
-
-            int topX = shape().gravityCenterFacet().getGravityCenter().x;
-            int topY = shape().gravityCenterFacet().getGravityCenter().y - height;
-
-            int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width;
-            int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height;
-
-            return new Region(topX, topY, bottomX, bottomY);
         }
-
-    }
-
-    @Override
-    protected Region determineRegion() {
-        return genericDetermineRegion();
     }
 
 }

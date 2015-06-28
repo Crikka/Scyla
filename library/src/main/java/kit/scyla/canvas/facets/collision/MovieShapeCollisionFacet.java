@@ -28,17 +28,15 @@ import kit.scyla.core.facets.collision.CollisionFacet;
  * Date 10/10/2014
  */
 public class MovieShapeCollisionFacet<TShape extends MovieShape<TShape>> extends CollisionFacet<TShape> {
-    private Region genericDetermineRegion() {
+
+    @Override
+    protected void determineRegion(Region hitBox, Region fingerHitBox) {
         int width = shape().getMovie().width(), height = shape().getMovie().height();
         int xTopLeft = shape().gravityCenterFacet().getGravityCenter().x - width / 2;
         int yTopLeft = shape().gravityCenterFacet().getGravityCenter().y - height / 2;
 
-        return new Region(xTopLeft, yTopLeft, xTopLeft + width, yTopLeft + height);
-    }
-
-    @Override
-    protected Region determineRegion() {
-        return genericDetermineRegion();
+        hitBox.set(xTopLeft, yTopLeft, xTopLeft + width, yTopLeft + height);
+        fingerHitBox.set(xTopLeft, yTopLeft, xTopLeft + width, yTopLeft + height);
     }
 
 }
