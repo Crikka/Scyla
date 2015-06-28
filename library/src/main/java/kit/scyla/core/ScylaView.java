@@ -109,9 +109,12 @@ public abstract class ScylaView {
         touchGestureEvent.onTouchEvent(event);
     }
 
-    public abstract void onBackPressed();
+    public boolean onBackPressed(){
+        return false;
+    }
 
-    public void onKeyDown(int keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return false;
     }
 
     protected ScylaView self() {

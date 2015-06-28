@@ -177,15 +177,12 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
     }
 
     public boolean onBackPressed() {
-        m_stageHandler.getCurrent().onBackPressed();
-        return true;
+        return m_stageHandler.getCurrent().onBackPressed();
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        m_stageHandler.getCurrent().onKeyDown(keyCode, event);
-
-        return true;
+        return m_stageHandler.getCurrent().onKeyDown(keyCode, event);
     }
 
     public Scene scene() {
