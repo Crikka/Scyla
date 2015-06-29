@@ -14,37 +14,23 @@
  *  limitations under the License.
  */
 
-package kit.scyla.canvas.facets.drawing;
+package kit.scyla.canvas.facets.collision;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.Region;
 
 import kit.scyla.canvas.shapes.text.Text;
 
 /**
  * Created with IntelliJ
- * Created by Nelaupe Lucas
- * Date 13/10/14
+ * Created by Ferrand
+ * Date 10/10/2014
  */
-@SuppressWarnings({"unused", "unchecked"})
-public class TextButtonDrawingFacet extends TextDrawingFacet {
-
-    public TextButtonDrawingFacet() {
-        super();
-
-    }
-
-    public TextButtonDrawingFacet(Paint paint) {
-        super(paint);
-    }
+public class TextButtonCollisionFacet extends TextCollisionFacet {
 
     @Override
-    public void draw(Canvas canvas) {
+    protected void determineRegion(Region hitBox, Region fingerHitBox) {
 
         Text shapeText = shape();
-        paint().setTextAlign(Paint.Align.CENTER);
 
         int width = shapeText.getTextWidth();
         int height = shapeText.getTextHeight();
@@ -55,15 +41,9 @@ public class TextButtonDrawingFacet extends TextDrawingFacet {
         int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width / 2 + 20;
         int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height / 2 + 20;
 
-        paint().setColor(Color.WHITE);
-
-        RectF r = new RectF(topX, topY, bottomX, bottomY);
-        canvas.drawRoundRect(r, 10, 10, paint());
-
-        paint().setColor(shapeText.getColor());
-
-        canvas.drawText(shapeText.getText(), shape().gravityCenterFacet().getGravityCenter().x, shape().gravityCenterFacet().getGravityCenter().y + height / 2, paint());
+        hitBox.set(topX, topY, bottomX, bottomY);
+        fingerHitBox.set(topX, topY, bottomX, bottomY);
 
     }
-}
 
+}

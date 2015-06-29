@@ -46,6 +46,17 @@ public class TextCollisionFacet extends CollisionFacet<Text> {
             hitBox.set(topX, topY, bottomX, bottomY);
             fingerHitBox.set(topX, topY, bottomX, bottomY);
 
+        } else {
+
+            int topX = shape().gravityCenterFacet().getGravityCenter().x;
+            int topY = shape().gravityCenterFacet().getGravityCenter().y - height;
+
+            int bottomX = shape().gravityCenterFacet().getGravityCenter().x + width;
+            int bottomY = shape().gravityCenterFacet().getGravityCenter().y + height;
+
+            hitBox.set(topX, topY, bottomX, bottomY);
+            fingerHitBox.set(topX, topY, bottomX, bottomY);
+
         }
     }
 

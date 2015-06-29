@@ -26,7 +26,6 @@ import kit.scyla.canvas.Share.SharedElements;
 import kit.scyla.canvas.facets.collision.TextCollisionFacet;
 import kit.scyla.canvas.facets.drawing.TextDrawingFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;
-import kit.scyla.core.facets.behavior.GroundInteraction;
 
 /**
  * Created with IntelliJ
@@ -41,6 +40,7 @@ public class Text extends ShapeCanvas<Text> {
     private String m_text;
     private int m_color;
     private boolean m_isCenter;
+    private int m_textWidth;
 
     public Text(Context context, int text, Point point) {
         super(point);
@@ -53,8 +53,8 @@ public class Text extends ShapeCanvas<Text> {
 
         m_isCenter = true;
 
+        m_textWidth = recalculateSize();
         recalculateDrawing();
-        subscribeInteraction(new GroundInteraction());
     }
 
     public Text(Context context, String text, Point point) {
@@ -68,8 +68,8 @@ public class Text extends ShapeCanvas<Text> {
 
         m_isCenter = true;
 
+        m_textWidth = recalculateSize();
         recalculateDrawing();
-        subscribeInteraction(new GroundInteraction());
     }
 
     public int getSize() {
@@ -78,6 +78,7 @@ public class Text extends ShapeCanvas<Text> {
 
     public void setSize(float size) {
         m_size = (int) (size * SharedElements.ratio * scale * 1.5);
+        m_textWidth = recalculateSize();
         recalculateDrawing();
     }
 
@@ -87,6 +88,7 @@ public class Text extends ShapeCanvas<Text> {
 
     public void setText(String text) {
         this.m_text = text;
+        m_textWidth = recalculateSize();
         recalculateDrawing();
     }
 
@@ -100,11 +102,7 @@ public class Text extends ShapeCanvas<Text> {
     }
 
     public int getTextWidth() {
-
-        Paint p = new Paint();
-        p.setTextSize(m_size);
-
-        return (int) p.measureText(m_text);
+        return m_textWidth;
     }
 
     public int getTextHeight() {
@@ -113,11 +111,13 @@ public class Text extends ShapeCanvas<Text> {
 
     public void append(String text) {
         this.m_text += text;
+        m_textWidth = recalculateSize();
         recalculateDrawing();
     }
 
     public void append(char text) {
         this.m_text += text;
+        m_textWidth = recalculateSize();
         recalculateDrawing();
     }
 
@@ -127,6 +127,7 @@ public class Text extends ShapeCanvas<Text> {
                 throw new IllegalArgumentException("The number is less than the text length");
             }
             m_text = m_text.substring(0, m_text.length() - number);
+            m_textWidth = recalculateSize();
             recalculateDrawing();
         }
     }
@@ -143,6 +144,12 @@ public class Text extends ShapeCanvas<Text> {
     public void setCenter(boolean isCenter) {
         m_isCenter = isCenter;
         recalculateDrawing();
+    }
+
+    protected int recalculateSize() {
+        Paint p = new Paint();
+        p.setTextSize(m_size);
+        return (int) p.measureText(m_text);
     }
 
     public Typeface getTypeface() {
