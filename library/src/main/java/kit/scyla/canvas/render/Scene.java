@@ -16,6 +16,8 @@
 
 package kit.scyla.canvas.render;
 
+import android.graphics.Canvas;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +31,7 @@ import rx.Scheduler;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
+import rx.functions.Action2;
 import rx.schedulers.Schedulers;
 
 /**
@@ -288,10 +291,10 @@ public abstract class Scene {
         m_phantomsElements.add(element);
     }
 
-    public final void onEachElement(Action1<Shape> function) {
-        onEachPhantomElement(function);
-        onEachDynamicElement(function);
-        onEachStaticElement(function);
+    public final void onDrawEachElement(Canvas canvas, Action2<Canvas, Shape> function) {
+        onDrawEachPhantomElement(canvas, function);
+        onDrawEachDynamicElement(canvas, function);
+        onDrawEachStaticElement(canvas, function);
     }
 
     public final void onEachDynamicElement(Action1<Shape> function) {
@@ -309,6 +312,24 @@ public abstract class Scene {
     public final void onEachPhantomElement(Action1<Shape> function) {
         for (Shape element : m_phantomsElements) {
             function.call(element);
+        }
+    }
+
+    public final void onDrawEachDynamicElement(Canvas canvas, Action2<Canvas, Shape> function) {
+        for (Shape element : m_dynamicsElements) {
+            function.call(canvas, element);
+        }
+    }
+
+    public final void onDrawEachStaticElement(Canvas canvas, Action2<Canvas, Shape> function) {
+        for (Shape element : m_staticsElements) {
+            function.call(canvas, element);
+        }
+    }
+
+    public final void onDrawEachPhantomElement(Canvas canvas, Action2<Canvas, Shape> function) {
+        for (Shape element : m_phantomsElements) {
+            function.call(canvas, element);
         }
     }
 

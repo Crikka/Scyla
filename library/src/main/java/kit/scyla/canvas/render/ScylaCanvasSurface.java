@@ -38,7 +38,7 @@ import kit.scyla.core.ScylaSurface;
 import kit.scyla.core.ScylaView;
 import kit.scyla.core.facets.drawing.DrawingFacet;
 import kit.scyla.core.shapes.Shape;
-import rx.functions.Action1;
+import rx.functions.Action2;
 
 /**
  * Created with IntelliJ
@@ -57,6 +57,8 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
     private GridTemplate grid;
 
     private Context m_context;
+
+    private Action2 m_actionDraw;
 
     public ScylaCanvasSurface(final Context context) {
         super(context);
@@ -101,21 +103,9 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
             }
         };
 
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        m_stageHandler.getCurrent().onTouchViewEvent(event);
-        return true;
-    }
-
-    @Override
-    public void draw(final Canvas canvas) {
-        super.draw(canvas);
-
-        m_scene.onEachElement(new Action1<Shape>() {
+        m_actionDraw = new Action2<Canvas, Shape>() {
             @Override
-            public void call(Shape shape) {
+            public void call(Canvas canvas, Shape shape) {
 
                 shape.doIt();
 
@@ -149,7 +139,21 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
                 }
 
             }
-        });
+        };
+
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        m_stageHandler.getCurrent().onTouchViewEvent(event);
+        return true;
+    }
+
+    @Override
+    public void draw(final Canvas canvas) {
+        super.draw(canvas);
+
+        m_scene.onDrawEachElement(canvas, m_actionDraw);
 
         if (BuildConfig.DEBUG) {
             Paint p = new Paint();
