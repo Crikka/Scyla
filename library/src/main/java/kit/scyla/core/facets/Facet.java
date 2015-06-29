@@ -25,7 +25,8 @@ import kit.scyla.core.shapes.Shape;
  */
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class Facet<TShape extends Shape> {
-    private transient TShape m_shape;
+
+    private TShape m_shape;
 
     public abstract void onShapeDefined(TShape shape);
 

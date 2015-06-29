@@ -31,8 +31,7 @@ import kit.scyla.core.facets.drawing.DrawingFacet;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class DrawingCanvasFacet<TShape extends ShapeCanvas<TShape>> extends DrawingFacet<TShape, Canvas> {
 
-    private final transient Paint m_paint;
-
+    private final Paint m_paint;
 
     public DrawingCanvasFacet() {
         super();
