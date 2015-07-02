@@ -46,41 +46,56 @@ public abstract class ViewHandler {
     }
 
     public void setCurrent(final Class<? extends ScylaCanvasView> viewClass) {
-
-        m_scene.subscribeRuntimeAction(new Action0() {
-            @Override
-            public void call() {
-
-                if (viewClass == null) {
-                    return;
-                }
-
-                try {
-                    Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
-                    m_current = constructor.newInstance(ViewHandler.this, m_context);
-                    onNext();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    throw new RuntimeException(e);
-                }
-
+        if(m_scene.isPaused()) {
+            try {
+                Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
+                m_current = constructor.newInstance(ViewHandler.this, m_context);
+                onNext();
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException(e);
             }
-        });
+        } else {
+            m_scene.subscribeRuntimeAction(new Action0() {
+                @Override
+                public void call() {
+
+                    if (viewClass == null) {
+                        return;
+                    }
+
+                    try {
+                        Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
+                        m_current = constructor.newInstance(ViewHandler.this, m_context);
+                        onNext();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        throw new RuntimeException(e);
+                    }
+
+                }
+            });
+        }
     }
 
     public void setCurrent(final ScylaView view) {
-        m_scene.subscribeRuntimeAction(new Action0() {
-            @Override
-            public void call() {
+        if(m_scene.isPaused()) {
+            m_current = view;
+            onNext();
+        } else {
+            m_scene.subscribeRuntimeAction(new Action0() {
+                @Override
+                public void call() {
 
-                if (view == null) {
-                    return;
+                    if (view == null) {
+                        return;
+                    }
+
+                    m_current = view;
+                    onNext();
                 }
-
-                m_current = view;
-                onNext();
-            }
-        });
+            });
+        }
     }
 
     public final void load(ScylaView stage) {

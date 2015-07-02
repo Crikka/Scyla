@@ -75,4 +75,9 @@ public class ScylaCanvasFragment extends ScylaFragment<ScylaCanvasSurface> {
         super.onPause();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        surface().scene().startRender();
+    }
 }
