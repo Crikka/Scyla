@@ -48,7 +48,7 @@ public class Text extends ShapeCanvas<Text> {
         scale = context.getResources().getDisplayMetrics().density;
         m_text = context.getResources().getText(text).toString();
 
-        m_size = (int) (20 * SharedElements.ratio * scale * 1.5);
+        m_size = (int) (20 * SharedElements.RATIO * scale * 1.5);
         m_color = Color.BLACK;
 
         m_isCenter = true;
@@ -63,7 +63,7 @@ public class Text extends ShapeCanvas<Text> {
         scale = context.getResources().getDisplayMetrics().density;
         m_text = text;
 
-        m_size = (int) (20 * SharedElements.ratio * scale * 1.5);
+        m_size = (int) (20 * SharedElements.RATIO * scale * 1.5);
         m_color = Color.BLACK;
 
         m_isCenter = true;
@@ -77,7 +77,7 @@ public class Text extends ShapeCanvas<Text> {
     }
 
     public void setSize(float size) {
-        m_size = (int) (size * SharedElements.ratio * scale * 1.5);
+        m_size = (int) (size * SharedElements.RATIO * scale * 1.5);
         m_textWidth = recalculateSize();
         recalculateDrawing();
     }

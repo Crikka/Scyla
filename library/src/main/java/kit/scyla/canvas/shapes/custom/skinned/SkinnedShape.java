@@ -40,8 +40,8 @@ public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends Sh
         super(position);
 
         if (autoScale) {
-            int newWidth = (int) Math.round(skin.getWidth() * SharedElements.ratio);
-            int newHeight = (int) Math.round(skin.getHeight() * SharedElements.ratio);
+            int newWidth = (int) Math.round(skin.getWidth() * SharedElements.RATIO);
+            int newHeight = (int) Math.round(skin.getHeight() * SharedElements.RATIO);
             Class<? extends SkinnedShape> classShape = ((TSelf) this).getClass();
 
             SkinnedShapeCache cache = SkinnedShapeCache.getInstance();

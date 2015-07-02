@@ -28,10 +28,11 @@ import android.util.DisplayMetrics;
 public class SharedElements {
 
     private static final double INCH_DEFAULT = 12;
-    public static double ratio = 0;
+    public static double RATIO = 0;
+    public static int DENSITY = 0;
 
     public static boolean isNotInit() {
-        return ratio == 0;
+        return RATIO == 0;
     }
 
 
@@ -45,7 +46,8 @@ public class SharedElements {
         double x = Math.pow(wi, 2);
         double y = Math.pow(hi, 2);
         double screenInches = Math.sqrt(x + y);
-        ratio = screenInches / INCH_DEFAULT;
+        RATIO = screenInches / INCH_DEFAULT;
+        DENSITY = dens;
     }
 
 
