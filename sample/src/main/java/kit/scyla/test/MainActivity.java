@@ -10,7 +10,7 @@ import kit.scyla.core.ScylaFragment;
 
 public class MainActivity extends Activity {
 
-    ScylaCanvasFragment m_Scyla_fragment;
+    private ScylaCanvasFragment m_Scyla_fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
