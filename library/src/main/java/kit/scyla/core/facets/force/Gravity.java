@@ -23,7 +23,7 @@ package kit.scyla.core.facets.force;
  */
 @SuppressWarnings({"unused", "unchecked"})
 public class Gravity extends Force {
-    static double G = 0.01;
+    static double G = 0;
     private static Gravity INSTANCE = null;
 
     private Gravity() {
@@ -38,6 +38,7 @@ public class Gravity extends Force {
         return INSTANCE;
     }
 
+    @Deprecated
     public static Gravity getReinitializedInstance() {
         if (INSTANCE == null) {
             INSTANCE = new Gravity();
@@ -46,6 +47,14 @@ public class Gravity extends Force {
         INSTANCE.reinitialize();
 
         return INSTANCE;
+    }
+
+    public static void reinitializedInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new Gravity();
+        }
+
+        INSTANCE.reinitialize();
     }
 
     public static void setGravity(double gravity) {
