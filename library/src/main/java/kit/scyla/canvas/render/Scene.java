@@ -41,10 +41,10 @@ import rx.schedulers.Schedulers;
  */
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class Scene {
-    private ArrayList<Shape> m_dynamicsElements;
-    private ArrayList<Shape> m_staticsElements;
-    private ArrayList<Shape> m_phantomsElements;
-    private ArrayList<Action0> m_actions;
+    private final ArrayList<Shape> m_dynamicsElements;
+    private final ArrayList<Shape> m_staticsElements;
+    private final ArrayList<Shape> m_phantomsElements;
+    private final ArrayList<Action0> m_actions;
 
     private boolean m_reload, m_play, m_lock;
     private int m_width, m_height;

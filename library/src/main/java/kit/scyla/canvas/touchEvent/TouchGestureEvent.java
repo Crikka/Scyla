@@ -32,21 +32,19 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class TouchGestureEvent implements IGestureEvent {
 
-    /**
-     * For long press Test.
-     */
-    private final Handler handler = new Handler();
     private Shape shapeMoving;
-    private ArrayList<Shape> touchedShape;
     private Point PointFinger;
-    Runnable mLongPressed = new Runnable() {
+    private long lastTap = Calendar.getInstance().getTimeInMillis();
+
+    private final Handler handler = new Handler();
+    private final ArrayList<Shape> touchedShape;
+    private final Runnable mLongPressed = new Runnable() {
         public void run() {
             if (shapeMoving != null) {
                 onLongPressEvent(shapeMoving, PointFinger);
             }
         }
     };
-    private long lastTap = Calendar.getInstance().getTimeInMillis();
 
 
     public TouchGestureEvent() {

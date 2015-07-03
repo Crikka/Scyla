@@ -32,8 +32,8 @@ import rx.functions.Action0;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class ViewHandler {
     private ScylaView m_current;
-    private Scene m_scene;
-    private Context m_context;
+    private final Scene m_scene;
+    private final Context m_context;
 
     public ViewHandler(Context context, Scene scene) {
         this.m_context = context;

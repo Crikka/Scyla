@@ -29,7 +29,7 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public class GravityCenterFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> implements GravityCenter {
 
-    private Point m_position;
+    private final Point m_position;
 
     public GravityCenterFacet(Point position) {
         m_position = position;

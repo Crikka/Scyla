@@ -30,12 +30,12 @@ import rx.subjects.PublishSubject;
  */
 @SuppressWarnings({"unused", "unchecked"})
 public final class ForcesSystem {
-    private ArrayList<Force> m_forces;
-    private boolean m_subjectToGravity;
 
-    private Shape m_element;
+    private final ArrayList<Force> m_forces;
+    private boolean m_subjectToGravity;
+    private final Shape m_element;
     private PublishSubject<Shape> m_subject;
-    private HashSet<Shape> m_collidingElements;
+    private final HashSet<Shape> m_collidingElements;
     private boolean m_blockX, m_blockY;
     private short m_blockGravityIndicator; // 0 -> no block; >0 -> block gravity from top to bot; <0 -> Block from bot to top
 

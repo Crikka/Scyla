@@ -33,7 +33,7 @@ import kit.scyla.canvas.shapes.ShapeCanvas;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class MovieShape<TSelf extends MovieShape<TSelf>> extends ShapeCanvas<TSelf> {
 
-    private Movie m_movie;
+    private final Movie m_movie;
 
     public MovieShape(InputStream skin, Point position) {
         super(position);

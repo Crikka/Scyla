@@ -48,20 +48,19 @@ import rx.functions.Action2;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceHolder.Callback, ScylaSurface<ScylaCanvasView> {
 
-    private ViewHandler m_stageHandler;
-    private Scene m_scene;
-
-    // For debug engine
-    private FPS frameRate = new FPS();
-
-    private GridTemplate grid;
-
-    private Context m_context;
-
-    private Action2 m_actionDraw;
+    private final ViewHandler m_stageHandler;
+    private final Scene m_scene;
+    private FPS frameRate;
+    private final GridTemplate grid;
+    private final Context m_context;
+    private final Action2 m_actionDraw;
 
     public ScylaCanvasSurface(final Context context) {
         super(context);
+
+        if(BuildConfig.DEBUG) {
+            frameRate = new FPS();
+        }
 
         m_context = context;
 
@@ -144,13 +143,13 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean onTouchEvent(@SuppressWarnings("NullableProblems") MotionEvent event) {
         m_stageHandler.getCurrent().onTouchViewEvent(event);
         return true;
     }
 
     @Override
-    public void draw(final Canvas canvas) {
+    public void draw(@SuppressWarnings("NullableProblems") final Canvas canvas) {
         super.draw(canvas);
 
         m_scene.onDrawEachElement(canvas, m_actionDraw);
@@ -185,7 +184,7 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode, @SuppressWarnings("NullableProblems") KeyEvent event) {
         return m_stageHandler.getCurrent().onKeyDown(keyCode, event);
     }
 

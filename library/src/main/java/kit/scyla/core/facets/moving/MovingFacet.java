@@ -32,7 +32,7 @@ public abstract class MovingFacet<TShape extends Shape<TShape, ?>> extends Facet
     protected Point m_pointB;
     private double m_speedMoving;
 
-    public MovingFacet() {
+    protected MovingFacet() {
         super();
 
         direction = true;
@@ -41,7 +41,7 @@ public abstract class MovingFacet<TShape extends Shape<TShape, ?>> extends Facet
         m_pointB = null;
     }
 
-    public MovingFacet(int speed, Point pointA, Point pointB) {
+    protected MovingFacet(int speed, Point pointA, Point pointB) {
         super();
 
         direction = true;
@@ -64,14 +64,14 @@ public abstract class MovingFacet<TShape extends Shape<TShape, ?>> extends Facet
         }
     }
 
-    public abstract void onMoveNewPosition();
+    protected abstract void onMoveNewPosition();
 
     public void moveNewPosition() {
         onMoveNewPosition();
         shape().collisionFacet().recalculateContactArea();
     }
 
-    public int speed() {
+    protected int speed() {
         return (int) m_speedMoving / 10;
     }
 }

@@ -30,7 +30,7 @@ public class GridTemplate {
     public static final int numberOfColumn = 40;
     private static int ScreenWidth;
     private static int ScreenHeight;
-    private static GridTemplate INSTANCE = new GridTemplate();
+    private static final GridTemplate INSTANCE = new GridTemplate();
 
     private int offsetColumnLeft = 0;
     private int offsetColumnRight = 0;

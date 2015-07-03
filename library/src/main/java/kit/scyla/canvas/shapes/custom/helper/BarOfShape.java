@@ -33,9 +33,9 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class BarOfShape<TShape extends SkinnedShape<TShape>> extends CombinationShapes<TShape> {
 
-    private Context m_context;
-    private Point m_gravityPoint;
-    private int m_number;
+    private final Context m_context;
+    private final Point m_gravityPoint;
+    private final int m_number;
 
     public BarOfShape(Context context, Point point, int number) {
         m_context = context;

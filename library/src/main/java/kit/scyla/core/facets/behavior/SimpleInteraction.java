@@ -24,9 +24,6 @@ import kit.scyla.core.shapes.Shape;
  * Date 09/01/15
  */
 public abstract class SimpleInteraction extends Interaction<Shape, Shape> {
-    public SimpleInteraction() {
-        super();
-    }
 
     @Override
     public final void onInteract(Shape shape1, Shape shape2, InteractionType type) {

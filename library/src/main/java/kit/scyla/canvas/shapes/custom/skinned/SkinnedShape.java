@@ -34,7 +34,7 @@ import kit.scyla.canvas.shapes.ShapeCanvas;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class SkinnedShape<TSelf extends SkinnedShape<TSelf>> extends ShapeCanvas<TSelf> {
 
-    private Bitmap m_skin;
+    private final Bitmap m_skin;
 
     public SkinnedShape(Bitmap skin, Point position, boolean autoScale) {
         super(position);

@@ -28,7 +28,7 @@ import kit.scyla.canvas.shapes.custom.skinned.SkinnedShape;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class CombinationShapes<TShape extends SkinnedShape<TShape>> {
 
-    private ArrayList<TShape> m_elements;
+    private final ArrayList<TShape> m_elements;
 
     public CombinationShapes() {
         m_elements = new ArrayList<>();

@@ -39,8 +39,7 @@ public abstract class ScylaView {
 
     private final Context m_context;
     private final ViewHandler m_handler;
-
-    private TouchGestureEvent touchGestureEvent;
+    private final TouchGestureEvent touchGestureEvent;
 
     public ScylaView(final ViewHandler handler, Context context) {
         m_handler = handler;
@@ -109,10 +108,12 @@ public abstract class ScylaView {
         touchGestureEvent.onTouchEvent(event);
     }
 
+    @SuppressWarnings("SameReturnValue")
     public boolean onBackPressed(){
         return false;
     }
 
+    @SuppressWarnings("SameReturnValue")
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return false;
     }

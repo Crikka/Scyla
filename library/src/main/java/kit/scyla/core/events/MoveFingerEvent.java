@@ -29,7 +29,7 @@ import kit.scyla.core.shapes.Shape;
  */
 @SuppressWarnings({"unused", "unchecked"})
 public class MoveFingerEvent extends TouchEvent {
-    private Shape m_shape;
+    private final Shape m_shape;
 
     public MoveFingerEvent(Shape shape) {
         this.m_shape = shape;

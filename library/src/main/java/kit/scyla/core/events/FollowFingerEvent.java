@@ -30,7 +30,7 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public class FollowFingerEvent<TSelf extends Shape<TSelf, ?>> extends TouchEvent {
 
-    private TSelf m_shape;
+    private final TSelf m_shape;
 
     public FollowFingerEvent(TSelf shape) {
         m_shape = shape;

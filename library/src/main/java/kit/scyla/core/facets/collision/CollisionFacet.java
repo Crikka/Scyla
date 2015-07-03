@@ -31,9 +31,9 @@ public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Fa
     private Region m_regionHitBox;
     private Region m_regionFingerHitBox;
 
-    public CollisionFacet() {
-        super();
-    }
+//    public CollisionFacet() {
+//        super();
+//    }
 
     @Override
     public void onShapeDefined(TShape shape) {
@@ -41,11 +41,10 @@ public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Fa
         this.m_regionFingerHitBox = new Region();
 
         determineRegion(m_regionHitBox, m_regionFingerHitBox);
-
     }
 
     public boolean fingerOn(int x, int y){
-        return getTouchHitBox().contains(x, y);
+        return m_regionFingerHitBox.contains(x, y);
     }
 
     protected abstract void determineRegion(Region hitBox, Region fingerHitBox);
@@ -53,10 +52,6 @@ public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Fa
 
     public final Region getHitBox() {
         return m_regionHitBox;
-    }
-
-    public Region getTouchHitBox() {
-        return m_regionFingerHitBox;
     }
 
     public final void recalculateContactArea() {
