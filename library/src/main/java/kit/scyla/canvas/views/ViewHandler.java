@@ -31,9 +31,9 @@ import rx.functions.Action0;
  */
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class ViewHandler {
-    private ScylaView m_current;
     private final Scene m_scene;
     private final Context m_context;
+    private ScylaView m_current;
 
     public ViewHandler(Context context, Scene scene) {
         this.m_context = context;
@@ -46,7 +46,7 @@ public abstract class ViewHandler {
     }
 
     public void setCurrent(final Class<? extends ScylaCanvasView> viewClass) {
-        if(m_scene.isPaused()) {
+        if (m_scene.isPaused()) {
             try {
                 Constructor<? extends ScylaCanvasView> constructor = viewClass.getConstructor(ViewHandler.class, Context.class);
                 m_current = constructor.newInstance(ViewHandler.this, m_context);
@@ -79,7 +79,7 @@ public abstract class ViewHandler {
     }
 
     public void setCurrent(final ScylaView view) {
-        if(m_scene.isPaused()) {
+        if (m_scene.isPaused()) {
             m_current = view;
             onNext();
         } else {

@@ -27,19 +27,10 @@ import kit.scyla.core.shapes.Shape;
  * Date 02/01/15
  */
 public abstract class MovingFacet<TShape extends Shape<TShape, ?>> extends Facet<TShape> {
+    private final double m_speedMoving;
     protected boolean direction;
     protected Point m_pointA;
     protected Point m_pointB;
-    private double m_speedMoving;
-
-    protected MovingFacet() {
-        super();
-
-        direction = true;
-
-        m_pointA = null;
-        m_pointB = null;
-    }
 
     protected MovingFacet(int speed, Point pointA, Point pointB) {
         super();

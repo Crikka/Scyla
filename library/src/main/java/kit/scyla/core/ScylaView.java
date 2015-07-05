@@ -109,7 +109,7 @@ public abstract class ScylaView {
     }
 
     @SuppressWarnings("SameReturnValue")
-    public boolean onBackPressed(){
+    public boolean onBackPressed() {
         return false;
     }
 

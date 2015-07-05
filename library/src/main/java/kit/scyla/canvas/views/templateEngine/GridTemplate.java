@@ -28,10 +28,9 @@ public class GridTemplate {
 
     public static final int numberOfRow = 30;
     public static final int numberOfColumn = 40;
+    private static final GridTemplate INSTANCE = new GridTemplate();
     private static int ScreenWidth;
     private static int ScreenHeight;
-    private static final GridTemplate INSTANCE = new GridTemplate();
-
     private int offsetColumnLeft = 0;
     private int offsetColumnRight = 0;
 

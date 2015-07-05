@@ -43,7 +43,7 @@ public abstract class CollisionFacet<TShape extends Shape<TShape, ?>> extends Fa
         determineRegion(m_regionHitBox, m_regionFingerHitBox);
     }
 
-    public boolean fingerOn(int x, int y){
+    public boolean fingerOn(int x, int y) {
         return m_regionFingerHitBox.contains(x, y);
     }
 

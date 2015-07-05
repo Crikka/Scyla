@@ -50,15 +50,15 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
 
     private final ViewHandler m_stageHandler;
     private final Scene m_scene;
-    private FPS frameRate;
     private final GridTemplate grid;
     private final Context m_context;
     private final Action2 m_actionDraw;
+    private FPS frameRate;
 
     public ScylaCanvasSurface(final Context context) {
         super(context);
 
-        if(BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             frameRate = new FPS();
         }
 
@@ -116,7 +116,7 @@ public abstract class ScylaCanvasSurface extends SurfaceView implements SurfaceH
                     }
                 }
                 DrawingFacet facet = shape.drawingFacet();
-                if(facet != null) {
+                if (facet != null) {
                     facet.draw(canvas);
                 }
 

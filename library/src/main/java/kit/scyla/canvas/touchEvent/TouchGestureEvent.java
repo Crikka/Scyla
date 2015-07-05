@@ -32,12 +32,10 @@ import kit.scyla.core.shapes.Shape;
 @SuppressWarnings({"unused", "unchecked"})
 public abstract class TouchGestureEvent implements IGestureEvent {
 
-    private Shape shapeMoving;
-    private Point PointFinger;
-    private long lastTap = Calendar.getInstance().getTimeInMillis();
-
     private final Handler handler = new Handler();
     private final ArrayList<Shape> touchedShape;
+    private Shape shapeMoving;
+    private Point PointFinger;
     private final Runnable mLongPressed = new Runnable() {
         public void run() {
             if (shapeMoving != null) {
@@ -45,6 +43,7 @@ public abstract class TouchGestureEvent implements IGestureEvent {
             }
         }
     };
+    private long lastTap = Calendar.getInstance().getTimeInMillis();
 
 
     public TouchGestureEvent() {
