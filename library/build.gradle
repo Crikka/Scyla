@@ -25,7 +25,7 @@ android {
 }
 
 dependencies {
-    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'io.reactivex:rxandroid:0.25.0'
 }
 
 
