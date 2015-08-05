@@ -12,7 +12,7 @@ It's run inside a fragment so you can use it wherever you want !
 **Gradle dependency**
 
 ``` groovy
-compile 'fr.nelaupe:scyla:1.1.0@aar'
+compile 'fr.nelaupe:scyla:1.1.2@aar'
 ```
 
 **Maven dependency**
@@ -21,7 +21,7 @@ compile 'fr.nelaupe:scyla:1.1.0@aar'
 <dependency>
     <groupId>fr.nelaupe</groupId>
     <artifactId>scyla</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.2</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ public class myView extends ScylaCanvasView {
 
 	@Override
 	public void addCustomElements(Scene scene, GridTemplate grid) {
-		final Text txt = new Text(context(),"Hello world",grid.getCenter());
+		final Text txt = new Text(context(), "Hello world", grid.getCenter());
 		scene.addStaticElement(txt);
 		
 		this.subscribeTouchListener(txt,new TouchEvent() {
