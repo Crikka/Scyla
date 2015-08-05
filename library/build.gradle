@@ -3,7 +3,7 @@ apply plugin: 'signing'
 apply plugin: 'maven'
 
 group 'fr.nelaupe'
-version '1.1.1'
+version '1.1.2'
 
 android {
     compileSdkVersion 22
@@ -12,8 +12,8 @@ android {
     defaultConfig {
         minSdkVersion 12
         targetSdkVersion 22
-        versionCode 6
-        versionName "1.1.1"
+        versionCode 7
+        versionName "1.1.2"
     }
     buildTypes {
 
