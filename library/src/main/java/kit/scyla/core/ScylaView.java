@@ -22,9 +22,9 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 
 import kit.scyla.canvas.render.Scene;
-import kit.scyla.canvas.touchEvent.TouchEvent;
-import kit.scyla.canvas.touchEvent.TouchGestureEvent;
-import kit.scyla.canvas.touchEvent.TouchTypeEvent;
+import kit.scyla.canvas.touch.TouchEvent;
+import kit.scyla.canvas.touch.TouchGestureEvent;
+import kit.scyla.canvas.touch.TouchTypeEvent;
 import kit.scyla.canvas.views.ViewHandler;
 import kit.scyla.canvas.views.templateEngine.GridTemplate;
 import kit.scyla.core.shapes.Shape;

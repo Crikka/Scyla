@@ -5,8 +5,8 @@ import android.graphics.Point;
 
 import kit.scyla.canvas.render.Scene;
 import kit.scyla.canvas.shapes.text.Text;
-import kit.scyla.canvas.touchEvent.TouchEvent;
-import kit.scyla.canvas.touchEvent.TouchTypeEvent;
+import kit.scyla.canvas.touch.TouchEvent;
+import kit.scyla.canvas.touch.TouchTypeEvent;
 import kit.scyla.canvas.views.ScylaCanvasView;
 import kit.scyla.canvas.views.ViewHandler;
 import kit.scyla.canvas.views.templateEngine.GridTemplate;

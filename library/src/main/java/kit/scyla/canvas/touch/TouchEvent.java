@@ -14,17 +14,17 @@
  *  limitations under the License.
  */
 
-package kit.scyla.canvas.touchEvent;
+package kit.scyla.canvas.touch;
+
+import android.graphics.Point;
 
 /**
  * Created with IntelliJ
  * Created by Nelaupe Lucas
  * Date 01/01/15
  */
-public enum TouchTypeEvent {
-    Touch,
-    LongTouch,
-    Move,
-    DoubleTap,
-    Raise
+public abstract class TouchEvent {
+
+    public abstract void onTouch(Point point, TouchTypeEvent event);
+
 }

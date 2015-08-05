@@ -18,8 +18,8 @@ package kit.scyla.core.events;
 
 import android.graphics.Point;
 
-import kit.scyla.canvas.touchEvent.TouchEvent;
-import kit.scyla.canvas.touchEvent.TouchTypeEvent;
+import kit.scyla.canvas.touch.TouchEvent;
+import kit.scyla.canvas.touch.TouchTypeEvent;
 import kit.scyla.core.shapes.Shape;
 
 /**

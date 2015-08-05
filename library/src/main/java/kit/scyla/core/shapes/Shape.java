@@ -24,8 +24,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import kit.scyla.canvas.touchEvent.TouchEvent;
-import kit.scyla.canvas.touchEvent.TouchTypeEvent;
+import kit.scyla.canvas.touch.TouchEvent;
+import kit.scyla.canvas.touch.TouchTypeEvent;
 import kit.scyla.core.facets.behavior.Interaction;
 import kit.scyla.core.facets.behavior.InteractionType;
 import kit.scyla.core.facets.collision.CollisionFacet;

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package kit.scyla.canvas.Share;
+package kit.scyla.canvas.share;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

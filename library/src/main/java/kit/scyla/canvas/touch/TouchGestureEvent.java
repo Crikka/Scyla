@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package kit.scyla.canvas.touchEvent;
+package kit.scyla.canvas.touch;
 
 import android.graphics.Point;
 import android.os.Handler;

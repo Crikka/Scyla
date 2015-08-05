@@ -14,28 +14,17 @@
  *  limitations under the License.
  */
 
-package kit.scyla.canvas.touchEvent;
-
-import android.graphics.Point;
-
-import kit.scyla.core.shapes.Shape;
+package kit.scyla.canvas.touch;
 
 /**
  * Created with IntelliJ
  * Created by Nelaupe Lucas
- * Date 04/01/15
+ * Date 01/01/15
  */
-@SuppressWarnings({"unused", "unchecked"})
-public interface IGestureEvent {
-
-    void onTouchEvent(Shape shape, Point PointFinger);
-
-    void onMovingEvent(Shape shape, Point PointFinger);
-
-    void onLongPressEvent(Shape shape, Point PointFinger);
-
-    void onDoubleTapEvent(Shape shape, Point PointFinger);
-
-    void onRaiseEvent(Shape shape, Point PointFinger);
-
+public enum TouchTypeEvent {
+    Touch,
+    LongTouch,
+    Move,
+    DoubleTap,
+    Raise
 }

@@ -20,7 +20,7 @@ import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.Point;
 
-import kit.scyla.canvas.Share.SharedElements;
+import kit.scyla.canvas.share.SharedElements;
 import kit.scyla.canvas.cache.SkinnedShapeCache;
 import kit.scyla.canvas.facets.collision.SkinnedShapeCollisionFacet;
 import kit.scyla.canvas.facets.drawing.SkinnedShapeDrawingFacet;
