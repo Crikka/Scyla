@@ -22,7 +22,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Typeface;
 
-import kit.scyla.canvas.share.SharedElements;
+import kit.scyla.core.share.SharedElements;
 import kit.scyla.canvas.facets.collision.TextCollisionFacet;
 import kit.scyla.canvas.facets.drawing.TextDrawingFacet;
 import kit.scyla.canvas.shapes.ShapeCanvas;

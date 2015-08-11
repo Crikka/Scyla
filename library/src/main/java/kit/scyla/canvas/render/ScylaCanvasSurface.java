@@ -29,7 +29,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import kit.scyla.BuildConfig;
-import kit.scyla.canvas.share.SharedElements;
+import kit.scyla.core.share.SharedElements;
 import kit.scyla.canvas.debug.FPS;
 import kit.scyla.canvas.views.ScylaCanvasView;
 import kit.scyla.canvas.views.ViewHandler;
