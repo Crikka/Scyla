@@ -7,7 +7,7 @@ It's run inside a fragment so you can use it wherever you want !
 
 ## Add Dependency
 
-<a href='http://search.maven.org/#search%7Cga%7C1%7Cscyla'><img src='http://img.shields.io/maven-central/v/fr.nelaupe/scyla.svg'></a>
+<a href='http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22fr.nelaupe%22%20AND%20a%3A%22scyla%22'><img src='http://img.shields.io/maven-central/v/fr.nelaupe/scyla.svg'></a>
 
 **Gradle dependency**
 
