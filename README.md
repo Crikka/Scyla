@@ -2,7 +2,7 @@
 
 ## Canvas engine for Android
 
-Scyla is a rotation safe canvas engine for Android. Available on Gradle.
+Scyla is a rotation safe canvas engine for Android. Available on maven.
 It's run inside a fragment so you can use it wherever you want !
 
 ## Add Dependency
